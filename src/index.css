@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "SpaceGrotesk-Light";
+  src: url("../public/fonts/SpaceGrotesk-Light.ttf");
+}
+@font-face {
+  font-family: "SpaceGrotesk-Medium";
+  src: url("../public/fonts/SpaceGrotesk-Medium.ttf");
+}
+@font-face {
+  font-family: "SpaceGrotesk-Bold";
+  src: url("../public/fonts/SpaceGrotesk-Bold.ttf");
+}
+@font-face {
+  font-family: "SpaceGrotesk-Regular";
+  src: url("../public/fonts/SpaceGrotesk-Regular.ttf");
+}
+@font-face {
+  font-family: "SpaceGrotesk-SemiBold";
+  src: url("../public/fonts/SpaceGrotesk-SemiBold.ttf");
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+video {
+  object-fit: cover;
+}
+body {
+  margin: 0;
+  font-family: "SpaceGrotesk-Regular", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
