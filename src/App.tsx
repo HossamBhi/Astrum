@@ -1,7 +1,5 @@
-import { Home } from "./pages";
+import MainRoutes from "./routes";
 
-function App() {
-  return <Home />;
-}
+const App = () => <MainRoutes />;
 
 export default App;

@@ -5,7 +5,7 @@ const Home = () => {
   const { width, height } = useWindowDimensions();
   const isLandscape = width > height;
   return (
-    <div>
+    <div className="overflow-hidden">
       <video
         poster={require("../assets/landscape.png")}
         playsInline
@@ -14,8 +14,8 @@ const Home = () => {
         loop
         muted
         style={{ width, height }}
-        className="bg-black top-0 bottom-0 absolute w-auto
-            min-w-full min-h-full max-w-none"
+        className="absolute bottom-0 top-0 min-h-full w-auto
+            min-w-full max-w-none bg-black"
       >
         <source
           src={
@@ -48,7 +48,7 @@ const Home = () => {
           alt="Astrum Films Logo"
         />
 
-        <h1 className="text-4xl sm:text-8xl text-center text-white">
+        <h1 className="text-center text-4xl text-white sm:text-8xl">
           Coming Soon
         </h1>
         <div className="flex gap-3 pb-4">
