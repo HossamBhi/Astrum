@@ -16,32 +16,47 @@ const HomeSection = () => {
     });
   }, []);
 
-  if (!movie) {
-    return <></>;
-  }
-
   return (
-    <motion.section className="h-[550px] w-full text-white md:h-[650px] xl:h-[1080px]">
+    <motion.section
+      animate={{ opacity: 1 }}
+      className="h-[450px] w-full text-white md:h-[550px] xl:h-[700px] 2xl:h-[1080px]"
+    >
       <div className="relative h-full w-full">
         <div className="absolute flex h-full w-full items-center justify-center bg-gradient-to-r from-black">
           <div className="flex w-full flex-col justify-center p-4 md:p-8">
-            <h1 className="text-3xl font-bold md:text-5xl 2xl:w-[50%] xl:text-7xl">
+            <motion.h1
+              initial={{ x: "100vw" }}
+              animate={{ x: 0, transition: { duration: 0.5 } }}
+              className="text-3xl font-bold md:text-5xl 2xl:w-[50%] 2xl:text-7xl"
+            >
               {movie?.title}
-            </h1>
-            <div className="my-4 xl:my-7">
-              <button className="border border-gray-300 bg-gray-300 px-5 py-2 font-bold text-black xl:text-2xl">
+            </motion.h1>
+            <motion.div
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0, transition: { duration: 0.5 } }}
+              className="my-4 xl:my-7"
+            >
+              <button className="border border-gray-300 bg-gray-300 px-5 py-2 font-bold text-black 2xl:text-2xl">
                 Play
               </button>
-              <button className="ml-5 border border-gray-300 px-5 py-2 font-bold text-white xl:text-2xl">
+              <button className="ml-5 border border-gray-300 px-5 py-2 font-bold text-white 2xl:text-2xl">
                 Watch Later
               </button>
-            </div>
-            <p className="text-sm text-gray-400 xl:text-xl">
+            </motion.div>
+            <motion.p
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0, transition: { duration: 0.5 } }}
+              className="text-sm text-gray-400 2xl:text-xl"
+            >
               Released: {movie?.release_date}
-            </p>
-            <p className="w-full text-gray-200 md:max-w-[70%] lg:max-w-[50%] xl:max-w-[45%] xl:text-3xl">
+            </motion.p>
+            <motion.p
+              initial={{ y: "100vh" }}
+              animate={{ y: 0, transition: { duration: 0.5 } }}
+              className="w-full text-gray-200 md:max-w-[70%] lg:max-w-[50%] xl:text-2xl 2xl:max-w-[45%] 2xl:text-3xl"
+            >
               {truncateString(movie?.overview, 150)}
-            </p>
+            </motion.p>
           </div>
         </div>
         <img

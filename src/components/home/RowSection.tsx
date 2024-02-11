@@ -15,18 +15,29 @@ const RowSection = ({ title, requestUrl }: RowSectionProps) => {
 
   const slideLeft = () => {
     const slider = document.getElementById("slider" + title);
-    if (slider) slider.scrollLeft = slider?.scrollLeft - 500;
+    if (slider) {
+      // if (slider.scrollLeft === 0) {
+      //   return (slider.scrollLeft = movies?.length * 280);
+      // }
+      slider.scrollLeft = slider?.scrollLeft - 500;
+    }
   };
 
   const slideRight = () => {
     const slider = document.getElementById("slider" + title);
-    if (slider) slider.scrollLeft = slider?.scrollLeft + 500;
+    if (slider) {
+      // if (slider.scrollLeft === movies?.length * 280) {
+      //   return (slider.scrollLeft = 0);
+      // }
+      slider.scrollLeft = slider?.scrollLeft + 500;
+    }
   };
 
   return (
     <motion.section
       animate={{ x: 0, transition: { duration: 0.5 } }}
       initial={{ x: "100vw" }}
+      transition={{delay: .5}}
     >
       <h2 className="m-4 w-fit border-b-2 pb-2 pe-4 font-bold text-white md:text-xl">
         {title} ({movies.length})
