@@ -7,11 +7,13 @@ import { MovieRowCard } from "../cards";
 type RowSectionProps = { title: string; requestUrl: string };
 
 const RowSection = ({ title, requestUrl }: RowSectionProps) => {
-  const [movies, setMovies] = useState<movieProps[]>([]);
+  const [movies, setMovies] = useState<any>([
+    { poster_pat: require("../../assets/movies/2@2x.png") },
+  ]);
 
-  useEffect(() => {
-    axios({ url: requestUrl }).then(({ data }) => setMovies(data.results));
-  }, [requestUrl]);
+  // useEffect(() => {
+  //   axios({ url: requestUrl }).then(({ data }) => setMovies(data.results));
+  // }, [requestUrl]);
 
   const slideLeft = () => {
     const slider = document.getElementById("slider" + title);
@@ -34,13 +36,9 @@ const RowSection = ({ title, requestUrl }: RowSectionProps) => {
   };
 
   return (
-    <motion.section
-      animate={{ x: 0, transition: { duration: 0.5 } }}
-      initial={{ x: "100vw" }}
-      transition={{delay: .5}}
-    >
-      <h2 className="m-4 w-fit border-b-2 pb-2 pe-4 font-bold text-white md:text-xl">
-        {title} ({movies.length})
+    <motion.section>
+      <h2 className="w-full p-4 pb-2 pe-4 text-right font-bold text-white md:text-xl">
+        {title}
       </h2>
       <div className="group relative flex items-center">
         <MdChevronLeft
@@ -52,9 +50,107 @@ const RowSection = ({ title, requestUrl }: RowSectionProps) => {
           id={"slider" + title}
           className="no-scrollbar relative h-full w-full overflow-x-scroll scroll-smooth whitespace-nowrap"
         >
-          {movies?.map((item, index) => (
-            <MovieRowCard item={item} key={item.title + index} />
-          ))}
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/2@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/3@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/4@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/5@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/6@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          {/* <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/7@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div> */}
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/2@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/2@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/3@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/4@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/5@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/6@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          {/* <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/7@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div> */}
+          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+            <img
+              src={require("../../assets/movies/2@2x.png")}
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          {/* {movies?.map((item: any) => (
+            <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+              <img
+                src={require("../../assets/movies/2@2x.png")}
+                className="block h-auto w-full object-cover"
+              />
+              <motion.div
+                whileHover={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                className="absolute right-0 top-0 h-full w-full from-black/80 p-4 text-white hover:bg-gradient-to-t"
+              >
+                <p className="flex h-full items-end whitespace-normal pb-2 font-bold sm:text-xs md:text-sm">
+                  {item.title}
+                </p>
+              </motion.div>
+            </div>
+          ))} */}
         </div>
         <MdChevronRight
           className="absolute right-0 z-10 hidden cursor-pointer rounded-full bg-white opacity-50 hover:opacity-100 group-hover:block"

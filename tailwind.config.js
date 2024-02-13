@@ -26,6 +26,7 @@ module.exports = withMT({
       // => @media (min-width: 1024px) { ... }
 
       '2xl': '1400px',
+      '3xl': '1921px'
       // => @media (min-width: 1280px) { ... }
     },
   },

@@ -1,14 +1,32 @@
 import { motion } from "framer-motion";
-import { HomeSection } from "../components/landingPage";
+import {
+  FooterOne,
+  FooterSection,
+  HomeSection,
+} from "../components/landingPage";
 import { DashWrapper } from "../components/wrapper";
 import { RowSection } from "../components/home";
 import { MOVIES } from "../services/apis/endpoints";
+import { AnimationDiv } from "../components/animation";
+import {
+  Service1,
+  Service2,
+  Service3,
+  Service4,
+} from "../components/landingPage/Services";
 const LandingPage = () => {
   return (
-    <DashWrapper>
-      <motion.div>
-        <motion.div>
-          <HomeSection />
+    <DashWrapper id="landingpage">
+      <AnimationDiv>
+        <HomeSection />
+      </AnimationDiv>
+      <Service1 />
+      <Service2 />
+      <Service3 />
+      <Service4 />
+      <FooterOne />
+      <FooterSection />
+      {/* <HomeSection />
           {[
             { title: "Up Comming", requestUrl: MOVIES.upcomming },
             { title: "Popular", requestUrl: MOVIES.popular },
@@ -21,9 +39,7 @@ const LandingPage = () => {
               title={item.title}
               requestUrl={item.requestUrl}
             />
-          ))}
-        </motion.div>
-      </motion.div>
+          ))} */}
     </DashWrapper>
   );
 };

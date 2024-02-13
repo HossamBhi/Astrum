@@ -1,68 +1,58 @@
-import axios from "axios";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { IMAGE_PATH, MOVIES } from "../../services/apis/endpoints";
-import { MOVIES_DUMMY } from "../../services/data";
-import { truncateString } from "../../utils/helper";
+import { useNavigate } from "react-router-dom";
 
 const HomeSection = () => {
-  const [movies, setMovies] = useState([]);
-  const movie: (typeof MOVIES_DUMMY)[0] =
-    movies[Math.floor(Math.random() * movies.length)];
-
-  useEffect(() => {
-    axios({ method: "GET", url: MOVIES.popular }).then((res) => {
-      setMovies(res.data.results);
-    });
-  }, []);
-
+  const navigate = useNavigate();
   return (
     <motion.section
-      animate={{ opacity: 1 }}
-      className="h-[450px] w-full text-white md:h-[550px] xl:h-[700px] 2xl:h-[1080px]"
+      // animate={{ opacity: 1 }}
+      className="h-[550px] w-full text-white md:h-[550px] xl:h-[750px] 3xl:h-[1280px]"
     >
-      <div className="relative h-full w-full">
-        <div className="absolute flex h-full w-full items-center justify-center bg-gradient-to-r from-black">
-          <div className="flex w-full flex-col justify-center p-4 md:p-8">
+      <div className="relative h-full w-full bg-gradient-to-r from-black/40 to-black/40">
+        <div className="absolute flex h-full w-full items-end justify-center pb-[25%] xl:pb-[10%] pt-16 2xl:pb-[4%]">
+          <div className="z-10 flex w-[54%] flex-col items-center justify-center text-white md:w-[50%] xl:w-[33%] 3xl:w-[20%]">
             <motion.h1
-              initial={{ x: "100vw" }}
-              animate={{ x: 0, transition: { duration: 0.5 } }}
-              className="text-3xl font-bold md:text-5xl 2xl:w-[50%] 2xl:text-7xl"
+              // initial={{ x: "100vw" }}
+              // animate={{ x: 0, transition: { duration: 0.5 } }}
+              className="w-full flex-1 text-center text-xl font-extrabold !leading-tight sm:text-2xl xl:text-[41px] 2xl:text-6xl 3xl:pb-10 3xl:text-[56pt]"
             >
-              {movie?.title}
+              إنتاجات أصلية وأكثر من 800 ساعة من المحتوى العربي الحصري
             </motion.h1>
-            <motion.div
-              initial={{ x: "-100vw" }}
-              animate={{ x: 0, transition: { duration: 0.5 } }}
-              className="my-4 xl:my-7"
-            >
-              <button className="border border-gray-300 bg-gray-300 px-5 py-2 font-bold text-black 2xl:text-2xl">
-                Play
+            <div className="flex w-full flex-1 justify-center gap-4 pt-5 sm:pt-8">
+              <input
+                placeholder="عنوان البريد الإلكتروني"
+                className="flex-1 rounded-[5px] border-[.5px] bg-[#00000061] px-4 py-2 text-[8px] placeholder-[#FFFFFF63] outline-none sm:text-[12px] 3xl:px-4 3xl:py-6 3xl:text-xl"
+              />
+              <button
+                onClick={() => navigate("/home")}
+                className="rounded-[5px] bg-[#5F2CFF] px-2 py-2 text-xs font-bold text-white md:px-12 md:py-2 3xl:px-16 3xl:text-3xl"
+              >
+                أبدأ الآن
               </button>
-              <button className="ml-5 border border-gray-300 px-5 py-2 font-bold text-white 2xl:text-2xl">
-                Watch Later
-              </button>
-            </motion.div>
+            </div>
             <motion.p
-              initial={{ x: "-100vw" }}
-              animate={{ x: 0, transition: { duration: 0.5 } }}
-              className="text-sm text-gray-400 2xl:text-xl"
+              // initial={{ y: "100vh" }}
+              // animate={{ y: 0, transition: { duration: 0.5 } }}
+              className="w-full pb-4 pt-4 text-center text-[12px] !leading-tight sm:pt-10 sm:text-sm xl:text-lg 3xl:pb-8 3xl:pt-20 3xl:text-2xl"
             >
-              Released: {movie?.release_date}
+              {/* {truncateString("LOSERS", 150)}*/}
+              .استمتع بعالم من المحتوى العربي <br />
+              الترفيهي والتعليمي المتنوع
             </motion.p>
-            <motion.p
-              initial={{ y: "100vh" }}
-              animate={{ y: 0, transition: { duration: 0.5 } }}
-              className="w-full text-gray-200 md:max-w-[70%] lg:max-w-[50%] xl:text-2xl 2xl:max-w-[45%] 2xl:text-3xl"
-            >
-              {truncateString(movie?.overview, 150)}
-            </motion.p>
+            <strong className="z-30 w-full pb-4 text-center text-[12px] font-bold sm:text-sm xl:text-lg 3xl:text-2xl">
+              .مجاني بالكامل
+            </strong>
           </div>
         </div>
         <img
-          alt={movie?.title}
-          src={`${IMAGE_PATH}original${movie?.backdrop_path}`}
-          className="h-full w-full object-fill"
+          alt={"faid"}
+          src={require("../../assets/fiad.png")}
+          className="absolute h-full w-full object-cover"
+        />
+        <img
+          alt={"banner"}
+          src={require("../../assets/banner.png")}
+          className="h-full w-full object-cover"
         />
       </div>
     </motion.section>

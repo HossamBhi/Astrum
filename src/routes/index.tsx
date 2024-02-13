@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, LandingPage } from "../pages";
+import { Home, Homepage, LandingPage } from "../pages";
 
 const ROUTES = [
   { path: "/", Page: Home },
-  { path: "/switch", Page: LandingPage },
+  { path: "https://www.astrumfilms.com/switch", Page: LandingPage },
+  { path: "/home", Page: Homepage },
 ];
 
 const MainRoutes = () => {
