@@ -23,6 +23,11 @@
   src: url("../public/fonts/SpaceGrotesk-SemiBold.ttf");
 }
 
+@font-face {
+  font-family: "CodecPro-Regular";
+  src: url("./assets/fonts/CodecPro-Regular.ttf");
+}
+
 html,
 body {
   width: 100%;
@@ -55,11 +60,16 @@ body {
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
- /* Hide scrollbar for IE, Edge and Firefox */
+  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
+
+#landingpage {
+  font-family: "CodecPro-Regular";
+  overflow-x: hidden;
 }

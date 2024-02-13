@@ -18,15 +18,15 @@ const Item = ({
         // }
         src={item.image}
         alt={item.title}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-contain"
       />
-      <div className="bottom-0, absolute left-0 right-0 top-0 h-full w-full bg-[#00000050] p-4">
+      <div className="bottom-0 absolute left-0 right-0 top-0 h-full w-full bg-[#00000050] p-4">
         <motion.h2
           //   initial={{ x: "-100vw" }}
           //   animate={isActive ? { x: 0 } : { x: "-100vw", opacity: 0 }}
           className="text-9xl text-white"
         >
-          {item.title}
+          {/* {item.title} */}
         </motion.h2>
         <motion.p>{item.description}</motion.p>
       </div>

@@ -1,3 +1,4 @@
+import HomeSection from "./HomeSection";
 import RowSection from "./RowSection";
 
-export { RowSection };
+export { HomeSection, RowSection };

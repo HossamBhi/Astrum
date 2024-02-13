@@ -1,18 +1,33 @@
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const DashHeader = () => {
+  const location = useLocation();
+  const isHome = location.pathname.includes("/home");
   return (
     <motion.header
-      initial={{ y: "-100vh" }}
-      animate={{ y: 0, transition: { duration: 0.5 } }}
-      className="absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent px-2 py-2 text-white"
+      // initial={{ y: "-100vh" }}
+      // animate={{ y: 0, transition: { duration: 0.5 } }}
+      className="absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent px-4 py-4 text-white xl:px-[60px] xl:py-[50px] 3xl:px-[120px] 3xl:py-[100px]"
     >
-      <img
-        src={require("../../assets/logo.png")}
-        alt="Switch Logo"
-        className="lg:[15%] md:[25%] w-[35%] object-contain"
-      />
-      {/* <nav>Header</nav> */}
+      {isHome ? (
+        <img
+          src={require("../../assets/nav.png")}
+          alt="Switch Nav"
+          className="w-full object-contain bg-blend-color-burn "
+        />
+      ) : (
+        <>
+          <img
+            src={require("../../assets/logo-white.png")}
+            alt="Switch Logo"
+            className="w-[120px] object-contain sm:w-[150px] md:w-[151px] 2xl:w-[250px] 3xl:w-[400px]"
+          />
+          <button className="rounded-[5px] border-[.5px] border-white px-5 py-2 text-[8px] text-white sm:font-bold md:text-[10px] 2xl:text-[20px] 3xl:rounded-[10px] 3xl:py-4 3xl:text-3xl">
+            تسجيل الدخول
+          </button>
+        </>
+      )}
     </motion.header>
   );
 };
