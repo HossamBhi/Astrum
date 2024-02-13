@@ -24,7 +24,7 @@ const HomeSection = () => {
                 className="flex-1 rounded-[5px] border-[.5px] bg-[#00000061] px-4 py-2 text-[8px] placeholder-[#FFFFFF63] outline-none sm:text-[12px] 3xl:px-4 3xl:py-6 3xl:text-xl"
               />
               <button
-                onClick={() => navigate("/home")}
+                onClick={() => navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92")}
                 className="rounded-[5px] bg-[#5F2CFF] px-2 py-2 text-xs font-bold text-white md:px-12 md:py-2 3xl:px-16 3xl:text-3xl"
               >
                 أبدأ الآن

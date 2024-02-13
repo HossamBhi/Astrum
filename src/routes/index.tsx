@@ -3,8 +3,8 @@ import { Home, Homepage, LandingPage } from "../pages";
 
 const ROUTES = [
   { path: "/", Page: Home },
-  { path: "https://www.astrumfilms.com/switch", Page: LandingPage },
-  { path: "/home", Page: Homepage },
+  { path: "/switch/ddf7aeebdb64677682cbbf0d967a4a92", Page: LandingPage },
+  { path: "/home/ddf7aeebdb64677682cbbf0d967a4a92", Page: Homepage },
 ];
 
 const MainRoutes = () => {

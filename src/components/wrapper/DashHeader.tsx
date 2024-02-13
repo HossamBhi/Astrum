@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const DashHeader = () => {
   const location = useLocation();
-  const isHome = location.pathname.includes("/home");
+  const isHome = location.pathname.includes("/home/ddf7aeebdb64677682cbbf0d967a4a92");
   return (
     <motion.header
       // initial={{ y: "-100vh" }}
