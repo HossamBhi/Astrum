@@ -8,8 +8,8 @@ const Homepage = () => {
       {/* <HomeSection /> */}
       <CustomCrausel />
       {[
-        { title: "الأكثر مشاهدة", requestUrl: MOVIES.upcomming },
-        { title: "الأصلية Switch أعمال", requestUrl: MOVIES.popular },
+        { title: "الأكثر مشاهدة", requestUrl: MOVIES.upcomming, id: 1 },
+        { title: "الأصلية Switch أعمال", requestUrl: MOVIES.popular, id: 2 },
         // { title: "Trending", requestUrl: MOVIES.trending },
         // { title: "Top Rated", requestUrl: MOVIES.topRated },
         // { title: "Horror", requestUrl: MOVIES.horror },
@@ -18,6 +18,7 @@ const Homepage = () => {
           key={item.title}
           title={item.title}
           requestUrl={item.requestUrl}
+          id={item.id}
         />
       ))}
 
@@ -28,6 +29,10 @@ const Homepage = () => {
         <div className="group relative flex items-center">
           <div className="no-scrollbar relative h-full w-full overflow-x-scroll scroll-smooth whitespace-nowrap">
             {[
+              "أفلام قصيرة",
+              "برامج",
+              "بودكاست",
+              "وثائقيات",
               "أفلام قصيرة",
               "برامج",
               "بودكاست",
@@ -57,7 +62,7 @@ const Homepage = () => {
         </div>
       </section>
       <div className="m-auto w-[20%] pb-20 pt-32">
-        <h3 className="w-full text-center leading-tight text-white xl:text-[30px] 3xl:text-[65px]">
+        <h3 className="w-full text-center leading-tight text-white xl:text-[30px] 4xl:text-[65px]">
           ادخل إلى عالم رائع من{" "}
           <span className="text-[#27FF55]">المنتجات الأصلية</span> الحصرية في
           التعليم والترفيه<span>!</span>

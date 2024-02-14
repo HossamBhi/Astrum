@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { movieProps } from "../../utils/types";
 import { MovieRowCard } from "../cards";
-type RowSectionProps = { title: string; requestUrl: string };
+type RowSectionProps = { title: string; requestUrl: string; id: number };
 
-const RowSection = ({ title, requestUrl }: RowSectionProps) => {
-  const [movies, setMovies] = useState<any>([
-    { poster_pat: require("../../assets/movies/2@2x.png") },
-  ]);
+const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
+  // const [movies, setMovies] = useState<any>([
+  //   { poster_pat: require("../../assets/movies/2@2x.png") },
+  // ]);
 
   // useEffect(() => {
   //   axios({ url: requestUrl }).then(({ data }) => setMovies(data.results));
@@ -50,90 +50,203 @@ const RowSection = ({ title, requestUrl }: RowSectionProps) => {
           id={"slider" + title}
           className="no-scrollbar relative h-full w-full overflow-x-scroll scroll-smooth whitespace-nowrap"
         >
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/2@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/3@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/4@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/5@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/6@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          {/* <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/7@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div> */}
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/2@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/2@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/3@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/4@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/5@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/6@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
-          {/* <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/7@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div> */}
-          <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-            <img
-              src={require("../../assets/movies/2@2x.png")}
-              className="block h-auto w-full object-cover"
-            />
-          </div>
+          {id === 2 ? (
+            <>
+              <div className="relative inline-block cursor-pointer p-2">
+                <img
+                  src={require("../../assets/movies2/3@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/1@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/2@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/4@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block cursor-pointer p-2">
+                <img
+                  src={require("../../assets/movies2/3@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/1@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/2@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/4@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block cursor-pointer p-2">
+                <img
+                  src={require("../../assets/movies2/3@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/1@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/2@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/4@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block cursor-pointer p-2">
+                <img
+                  src={require("../../assets/movies2/3@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/1@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/2@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies2/4@2x.png")}
+                  className="block h-[314px] w-full object-cover"
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/2@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/3@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/4@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/5@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/6@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/2@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/2@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/3@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/4@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/5@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/6@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/2@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/4@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/5@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+                <img
+                  src={require("../../assets/movies/6@2x.png")}
+                  className="block h-auto w-full object-cover"
+                />
+              </div>
+            </>
+          )}
           {/* {movies?.map((item: any) => (
             <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
               <img
