@@ -3,10 +3,11 @@ import Container from "./Container";
 import HeaderTop from "./HeaderTop";
 import HeaderTitle from "./HeaderTitle";
 import { motion } from "framer-motion";
+import SectionTags from "./SectionTags";
 
 const Service3 = ({ children }: HTMLProps<HTMLDivElement>) => {
   return (
-    <Container className="-mr-[100px] flex items-center justify-center pt-[75px] text-center text-white md:px-[4.5%] xl:px-[4.5%] 2xl:px-[17%]">
+    <Container className="flex items-center justify-center pt-[4.85vw] text-center text-white">
       <div className="w-full">
         <HeaderTop>
           تجربـة عصـر جديـد
@@ -16,28 +17,23 @@ const Service3 = ({ children }: HTMLProps<HTMLDivElement>) => {
           </p>
         </HeaderTop>
 
-        <div className="m-auto flex w-full justify-between gap-8">
+        <div className="m-auto flex w-full justify-between gap-4">
           <div className="flex w-[30%] flex-col items-end justify-center text-end">
             <HeaderTitle>
               محتوى <span className="text-[#27FF55]">متنوع</span> من التعليم
               <br /> <span>!</span>الترفيهي الحصري
             </HeaderTitle>
-            <div className="flex justify-center">
-              <img
-                src={require("../../../assets/tags.png")}
-                className="h-[55px] py-4 4xl:h-[75px]"
-              />
-            </div>
+            <SectionTags />
           </div>
-          <div className="mr-0 flex w-[40%] md:mr-[8%] 2xl:mr-0 2xl:w-[50%]">
+          <div className="mr-0 flex w-[40%]">
             <motion.video
-              // poster={require("../assets/landscape.png")}
+              // poster={process.env.PUBLIC_URL + "/service3.png"}
               playsInline
               controls={false}
               autoPlay
               loop
               muted
-              className="h-full w-full rounded-3xl object-fill"
+              className="h-full w-full rounded-[2vw] object-fill"
             >
               <source
                 src={process.env.PUBLIC_URL + "/Switch_Education_Website.mp4"}

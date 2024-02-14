@@ -1,21 +1,20 @@
 const FooterSection = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-between bg-white px-[5%] py-[2%] text-black">
-      <div className="flex w-full justify-between pt-[24px]">
+    <div className="flex w-full flex-col items-center justify-between bg-white px-[5%] py-[3.25vw] text-black">
+      <div className="flex w-full justify-between">
         <img
           src={require("../../assets/Logo Switch.png")}
-          className="w-[232px] object-contain 4xl:w-[466px]"
+          className="w-[8.25vw] object-contain"
+          alt="Switch logo"
         />
-        <h3 className="text-end text-[38px] font-bold 4xl:text-[75px]">
-          أعمال أصلية
-        </h3>
+        <h3 className="text-end text-[1.25vw] font-bold">أعمال أصلية</h3>
       </div>
-      <div className="flex h-full w-full justify-between pt-[34px]">
-        <p className="text-[16px] 4xl:text-[26px]">
+      <div className="flex h-full w-full justify-between pt-[3.25vw]">
+        <p className="text-[1vw]">
           © 2024 Switch Arabia, All Rights Reserved.
         </p>
 
-        <div className="flex justify-end gap-5 text-[16px] 4xl:text-[26px]">
+        <div className="flex justify-end gap-[1vw] text-[1vw]">
           <span>Terms of Use </span>
           <span>Privacy</span>
           <span>Cookie Preferences</span>

@@ -1,7 +1,15 @@
 import { HTMLProps } from "react";
 
-const Container = ({ children, ...props }: HTMLProps<HTMLDivElement>) => {
-  return <div {...props}>{children}</div>;
+const Container = ({
+  className,
+  children,
+  ...props
+}: HTMLProps<HTMLDivElement>) => {
+  return (
+    <div className={`px-[7.2vw] ${className}`} {...props}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;

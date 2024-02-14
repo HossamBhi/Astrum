@@ -1,25 +1,19 @@
-import { motion } from "framer-motion";
 import {
   FooterOne,
   FooterSection,
   HomeSection,
 } from "../components/landingPage";
-import { DashWrapper } from "../components/wrapper";
-import { RowSection } from "../components/home";
-import { MOVIES } from "../services/apis/endpoints";
-import { AnimationDiv } from "../components/animation";
 import {
   Service1,
   Service2,
   Service3,
   Service4,
 } from "../components/landingPage/Services";
+import { DashWrapper } from "../components/wrapper";
 const LandingPage = () => {
   return (
     <DashWrapper id="landingpage">
-      <AnimationDiv>
-        <HomeSection />
-      </AnimationDiv>
+      <HomeSection />
       <Service1 />
       <Service2 />
       <Service3 />

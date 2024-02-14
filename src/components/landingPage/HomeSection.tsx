@@ -4,24 +4,19 @@ import { useNavigate } from "react-router-dom";
 const HomeSection = () => {
   const navigate = useNavigate();
   return (
-    <motion.section className="h-[50.29vw] w-full text-white ">
+    <motion.section className="h-[50.29vw] w-full text-white">
       <div className="relative h-full w-full bg-gradient-to-r from-black/40 to-black/40">
-        <div className="absolute flex h-full w-full items-end justify-center pb-[3.5vw]  pt-16">
+        <div className="absolute flex h-full w-full items-end justify-center pb-[3.5vw] pt-16">
           <div className="z-10 flex flex-col items-center justify-center text-white">
-            {/* <div className="z-10 flex w-[54%] flex-col items-center justify-center text-white md:w-[35%] xl:w-[32%] 2xl:w-[33%] 3xl:w-[25%] 4xl:w-[20%]"> */}
             <motion.h1
-              // initial={{ x: "100vw" }}
-              // animate={{ x: 0, transition: { duration: 0.5 } }}
               dir="rtl"
-              className="w-full flex-1 pb-[3.5vw] text-center text-[3.9vw] font-extrabold !leading-tight"
-              // className="w-full flex-1 text-center text-xl font-extrabold !leading-tight sm:text-2xl xl:text-[41px] 2xl:text-6xl 4xl:pb-10 4xl:text-[56pt]"
+              className="codecPro-ExtraBold w-full flex-1 pb-[3.5vw] text-center text-[3.9vw] !leading-tight"
             >
               إنتاجات أصلية وأكثر من
               <br /> 800 ساعة من المحتوى <br />
               العربي الحصري
             </motion.h1>
             <div className="grid w-[40vw] grid-cols-7 gap-2">
-              {/* <div className="grid w-[54%] flex-1  justify-center gap-4 pt-5 sm:pt-8 md:w-[35%] xl:w-[32%] 2xl:w-[33%] 3xl:w-[25%] 4xl:w-[20%]"> */}
               <input
                 placeholder="عنوان البريد الإلكتروني"
                 className="col-span-5 w-full rounded-[0.25vw] border-[.5px] border-white/50 bg-[#00000061] px-[1vw] py-[.75vw] text-[1vw] placeholder-[#FFFFFF63] outline-none"

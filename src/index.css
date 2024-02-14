@@ -22,7 +22,14 @@
   font-family: "SpaceGrotesk-SemiBold";
   src: url("../public/fonts/SpaceGrotesk-SemiBold.ttf");
 }
-
+@font-face {
+  font-family: "CodecPro-Bold";
+  src: url("../public/fonts/CodecPro-Bold.otf");
+}
+@font-face {
+  font-family: "CodecPro-ExtraBold";
+  src: url("../public/fonts/CodecPro-ExtraBold.otf");
+}
 @font-face {
   font-family: "CodecPro-Regular";
   src: url("./assets/fonts/CodecPro-Regular.ttf");
@@ -72,4 +79,8 @@ body {
 #landingpage {
   font-family: "CodecPro-Regular";
   overflow-x: hidden;
+}
+.codecPro-ExtraBold {
+  font-family: "CodecPro-ExtraBold";
+  font-weight: 400;
 }
