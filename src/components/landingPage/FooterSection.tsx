@@ -4,10 +4,10 @@ const FooterSection = () => {
       <div className="flex w-full justify-between">
         <img
           src={require("../../assets/Logo Switch.png")}
-          className="w-[8.25vw] object-contain"
+          className="w-[15.77vw] object-contain"
           alt="Switch logo"
         />
-        <h3 className="text-end text-[1.25vw] font-bold">أعمال أصلية</h3>
+        <h3 className="codecPro-bold text-end text-[2.75vw]">أعمال أصلية</h3>
       </div>
       <div className="flex h-full w-full justify-between pt-[3.25vw]">
         <p className="text-[1vw]">
@@ -34,7 +34,7 @@ const FooterSection = () => {
   //       </p>
   //     </div>
   //     <div className="flex h-full flex-col justify-between">
-  //       <h3 className="pb-[12%] text-end text-[38px] font-bold 4xl:text-[75px]">
+  //       <h3 className="pb-[12%] text-end text-[38px] codecPro-bold 4xl:text-[75px]">
   //         أعمال أصلية
   //       </h3>
   //       <div className="flex w-full justify-end gap-5 text-[16px] 4xl:text-[26px]">

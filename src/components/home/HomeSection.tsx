@@ -27,7 +27,7 @@ const HomeSection = () => {
             <motion.h1
               initial={{ x: "100vw" }}
               animate={{ x: 0, transition: { duration: 0.5 } }}
-              className="text-3xl font-bold md:text-5xl 2xl:w-[50%] 2xl:text-7xl"
+              className="codecPro-bold text-3xl md:text-5xl 2xl:w-[50%] 2xl:text-7xl"
             >
               {movie?.title}
             </motion.h1>
@@ -36,10 +36,10 @@ const HomeSection = () => {
               animate={{ x: 0, transition: { duration: 0.5 } }}
               className="my-4 xl:my-7"
             >
-              <button className="border border-gray-300 bg-gray-300 px-5 py-2 font-bold text-black 2xl:text-2xl">
+              <button className="codecPro-bold border border-gray-300 bg-gray-300 px-5 py-2 text-black 2xl:text-2xl">
                 Play
               </button>
-              <button className="ml-5 border border-gray-300 px-5 py-2 font-bold text-white 2xl:text-2xl">
+              <button className="codecPro-bold ml-5 border border-gray-300 px-5 py-2 text-white 2xl:text-2xl">
                 Watch Later
               </button>
             </motion.div>

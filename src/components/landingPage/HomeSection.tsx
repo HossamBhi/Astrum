@@ -25,7 +25,7 @@ const HomeSection = () => {
                 onClick={() =>
                   navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92")
                 }
-                className="col-span-2 w-full rounded-[0.25vw] bg-[#5F2CFF] px-[2vw] py-[.75vw] text-[1.2vw] font-bold text-white"
+                className="codecPro-bold col-span-2 w-full rounded-[0.25vw] bg-[#5F2CFF] px-[2vw] py-[.75vw] text-[1.2vw] text-white"
               >
                 أبدأ الآن
               </button>
@@ -34,8 +34,8 @@ const HomeSection = () => {
               .استمتع بعالم من المحتوى العربي <br />
               الترفيهي والتعليمي المتنوع
             </motion.p>
-            <strong className="z-30 w-full text-center text-[1vw] font-bold">
-              .مجاني بالكامل
+            <strong className="z-30 w-full text-center text-[1vw]">
+              مجاني بالكامل
             </strong>
           </div>
         </div>
@@ -73,7 +73,7 @@ const HomeSection = () => {
   //               onClick={() =>
   //                 navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92")
   //               }
-  //               className="rounded-[5px] bg-[#5F2CFF] px-2 py-2 text-xs font-bold text-white md:px-12 md:py-2 md:text-lg 3xl:px-16 3xl:text-2xl 4xl:px-16 4xl:text-3xl"
+  //               className="rounded-[5px] bg-[#5F2CFF] px-2 py-2 text-xs codecPro-bold text-white md:px-12 md:py-2 md:text-lg 3xl:px-16 3xl:text-2xl 4xl:px-16 4xl:text-3xl"
   //             >
   //               أبدأ الآن
   //             </button>
@@ -87,7 +87,7 @@ const HomeSection = () => {
   //             .استمتع بعالم من المحتوى العربي <br />
   //             الترفيهي والتعليمي المتنوع
   //           </motion.p>
-  //           <strong className="z-30 w-full pb-4 text-center text-[12px] font-bold sm:text-sm xl:text-lg 3xl:-mb-4 3xl:pt-4 4xl:text-2xl">
+  //           <strong className="z-30 w-full pb-4 text-center text-[12px] codecPro-bold sm:text-sm xl:text-lg 3xl:-mb-4 3xl:pt-4 4xl:text-2xl">
   //             .مجاني بالكامل
   //           </strong>
   //         </div>

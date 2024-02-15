@@ -1,9 +1,5 @@
-import axios from "axios";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { movieProps } from "../../utils/types";
-import { MovieRowCard } from "../cards";
 type RowSectionProps = { title: string; requestUrl: string; id: number };
 
 const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
@@ -37,7 +33,7 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
 
   return (
     <motion.section>
-      <h2 className="w-full p-4 pb-2 pe-4 text-right font-bold text-white md:text-xl">
+      <h2 className="codecPro-bold w-full p-4 pb-2 pe-4 text-right text-white md:text-xl">
         {title}
       </h2>
       <div className="group relative flex items-center">
@@ -258,7 +254,7 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
                 initial={{ opacity: 0 }}
                 className="absolute right-0 top-0 h-full w-full from-black/80 p-4 text-white hover:bg-gradient-to-t"
               >
-                <p className="flex h-full items-end whitespace-normal pb-2 font-bold sm:text-xs md:text-sm">
+                <p className="flex h-full items-end whitespace-normal pb-2 codecPro-bold sm:text-xs md:text-sm">
                   {item.title}
                 </p>
               </motion.div>

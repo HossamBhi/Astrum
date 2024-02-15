@@ -26,7 +26,7 @@ const DashHeader = () => {
             className="w-[15.77vw] object-contain"
             // className="w-[120px] object-contain sm:w-[150px] md:w-[151px] 2xl:w-[250px] 4xl:w-[400px]"
           />
-          <button className="rounded-[0.25vw] border-[.12vw] border-white px-[1.75vw] py-[.5vw] text-[1.25vw] text-white sm:font-bold">
+          <button className="codecPro-bold rounded-[0.25vw] border-[.12vw] border-white px-[1.75vw] py-[.5vw] text-[1.25vw] text-white">
             تسجيل الدخول
           </button>
         </>

@@ -14,7 +14,7 @@ const MovieRowCard = ({ item }: { item: movieProps }) => (
       initial={{ opacity: 0 }}
       className="absolute right-0 top-0 h-full w-full from-black/80 p-4 text-white hover:bg-gradient-to-t"
     >
-      <p className="flex h-full items-end whitespace-normal pb-2 font-bold sm:text-xs md:text-sm">
+      <p className="flex h-full items-end whitespace-normal pb-2 codecPro-bold sm:text-xs md:text-sm">
         {item.title}
       </p>
     </motion.div>

@@ -1,5 +1,5 @@
 import { CustomCrausel } from "../components/carusel";
-import { HomeSection, RowSection } from "../components/home";
+import { RowSection } from "../components/home";
 import { DashWrapper } from "../components/wrapper";
 import { MOVIES } from "../services/apis/endpoints";
 const Homepage = () => {
@@ -23,7 +23,7 @@ const Homepage = () => {
       ))}
 
       <section>
-        <h2 className="w-full p-4 pb-2 pe-4 text-end font-bold text-white md:text-xl">
+        <h2 className="codecPro-bold w-full p-4 pb-2 pe-4 text-end text-white md:text-xl">
           تصفح حسب الفئة
         </h2>
         <div className="group relative flex items-center">
@@ -49,10 +49,11 @@ const Homepage = () => {
               <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
                 <img
                   src={require("../assets/btnbg.png")}
-                  className="block h-auto  rounded-md object-cover"
+                  className="block h-auto rounded-md object-cover"
+                  alt="btn"
                 />
                 <div className="absolute left-1/2 top-1/2 z-30 flex w-full -translate-x-1/2 -translate-y-1/2 transform items-center justify-center text-white">
-                  <p className="flex h-full w-fit items-end whitespace-normal pb-2 text-center font-bold sm:text-xs md:text-sm">
+                  <p className="codecPro-bold flex h-full w-fit items-end whitespace-normal pb-2 text-center sm:text-xs md:text-sm">
                     {item}
                   </p>
                 </div>

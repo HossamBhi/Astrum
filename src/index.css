@@ -80,6 +80,11 @@ body {
   font-family: "CodecPro-Regular";
   overflow-x: hidden;
 }
+.codecPro-bold {
+  font-family: "CodecPro-bold";
+  font-weight: 400;
+}
+
 .codecPro-ExtraBold {
   font-family: "CodecPro-ExtraBold";
   font-weight: 400;

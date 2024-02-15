@@ -39,7 +39,7 @@ const RowSectioncopy = ({ title, requestUrl }: RowSectionProps) => {
       initial={{ x: "100vw" }}
       transition={{ delay: 0.5 }}
     >
-      <h2 className="m-4 w-fit pb-2 pe-4 font-bold text-white md:text-xl">
+      <h2 className="codecPro-bold m-4 w-fit pb-2 pe-4 text-white md:text-xl">
         {title} ({movies.length})
       </h2>
       <div className="group relative flex items-center">
