@@ -14,7 +14,9 @@ const Service2 = ({ children }: HTMLProps<HTMLDivElement>) => {
         <div className="relative m-auto flex w-full justify-center">
           <div className="flex w-[100%]">
             <img
-              src={require("../../../assets/service2.png")}
+              // src={require("../../../assets/service2.png")}
+              src={`${process.env.PUBLIC_URL}/imgs/home/service2.png`}
+              alt="أفراد الأسرة"
               className="h-full w-[100%] object-contain"
             />
           </div>

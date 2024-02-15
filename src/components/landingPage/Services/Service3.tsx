@@ -27,7 +27,7 @@ const Service3 = ({ children }: HTMLProps<HTMLDivElement>) => {
           </div>
           <div className="mr-0 flex w-[40%]">
             <motion.video
-              // poster={process.env.PUBLIC_URL + "/service3.png"}
+              poster={process.env.PUBLIC_URL + "imgs/home/service3.png"}
               playsInline
               controls={false}
               autoPlay

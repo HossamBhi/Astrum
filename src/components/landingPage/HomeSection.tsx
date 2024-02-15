@@ -34,7 +34,7 @@ const HomeSection = () => {
               .استمتع بعالم من المحتوى العربي <br />
               الترفيهي والتعليمي المتنوع
             </motion.p>
-            <strong className="z-30 w-full text-center text-[1vw]">
+            <strong className="z-30 w-full text-center text-[1vw] codecPro-bold">
               مجاني بالكامل
             </strong>
           </div>

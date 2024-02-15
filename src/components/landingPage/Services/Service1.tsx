@@ -29,12 +29,14 @@ const Service1 = ({ children }: HTMLProps<HTMLDivElement>) => {
           </div>
           <div className="flex w-[66%] gap-[2vw]">
             <img
-              src={require("../../../assets/service1-1.jpg")}
+              alt="أفلام وثائقية | أفلام قصيرة"
+              src={`${process.env.PUBLIC_URL}/imgs/home/service1-1.jpg`}
               className="h-full w-[60%] object-fill xl:w-[60%]"
             />
             <img
-              src={require("../../../assets/service1-2.png")}
-              className="w-[50%] object-fill "
+              alt="التعليم الأسرة والطفل"
+              src={`${process.env.PUBLIC_URL}/imgs/home/service1-2.png`}
+              className="w-[50%] object-fill"
             />
           </div>
         </div>

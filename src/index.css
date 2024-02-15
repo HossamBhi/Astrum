@@ -81,8 +81,8 @@ body {
   overflow-x: hidden;
 }
 .codecPro-bold {
-  font-family: "CodecPro-bold";
-  font-weight: 400;
+  font-family: "CodecPro-Bold";
+  font-weight: normal;
 }
 
 .codecPro-ExtraBold {

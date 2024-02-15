@@ -16,7 +16,8 @@ const Service4 = ({ children }: HTMLProps<HTMLDivElement>) => {
         <div className="m-auto flex w-full justify-between gap-8">
           <div className="flex w-[40%]">
             <img
-              src={require("../../../assets/service4.png")}
+              // src={require("../../../assets/service4.png")}
+              src={`${process.env.PUBLIC_URL}/imgs/home/service4.png`}
               className="h-full w-full object-fill"
               alt="mlti device"
             />
