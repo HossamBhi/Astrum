@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import { HTMLProps } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-type RowSectionProps = { title: string; requestUrl: string; id: number };
+import { useWindowDimensions } from "../../hooks";
+type RowSectionProps = {
+  title: string | JSX.Element;
+  requestUrl: string;
+  id: number;
+};
 
 const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
+  const { width, height } = useWindowDimensions();
   // const [movies, setMovies] = useState<any>([
   //   { poster_pat: require("../../assets/movies/2@2x.png") },
   // ]);
@@ -31,9 +38,50 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
     }
   };
 
+  const MovieCard = ({ src, alt }: HTMLProps<HTMLImageElement>) => (
+    <motion.div
+      // initial={{ width: width < 1920 ? "24vw": "15vw" }}
+      // // animate={{ width: "80%" }}
+      // whileHover={{
+      //   width: width < 1920 ? "45vw": "35vw",
+      //   // minWidth: "150%",
+      //   transition: { duration: 0.25 },
+      // }}
+      // className="relative inline-block cursor-pointer p-2"
+      className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[18%]"
+    >
+      <motion.img
+        // className="h-[12vw] w-full object-cover"
+        className="block h-auto w-full object-cover"
+        src={src}
+        alt={alt ?? "no alt"}
+      />
+    </motion.div>
+  );
+  const MovieCardAnimated = ({ src, alt }: HTMLProps<HTMLImageElement>) => (
+    <motion.div
+      initial={{ width: width < 1920 ? "24vw": "17vw" }}
+      // animate={{ width: "80%" }}
+      whileHover={{
+        width: width < 1920 ? "45vw": "37vw",
+        // minWidth: "150%",
+        transition: { duration: 0.25 },
+      }}
+      className="relative inline-block cursor-pointer p-2"
+      // className="relative inline-block cursor-pointer px-[0.5vw]"
+    >
+      <motion.img
+        // className="h-[12vw] w-full object-cover"
+        className="block h-[200px] w-full object-cover xl:h-[314px] 2xl:h-[450px] 3xl:h-[614px]"
+        src={src}
+        alt={alt ?? "no alt"}
+      />
+    </motion.div>
+  );
+
   return (
     <motion.section>
-      <h2 className="codecPro-bold w-full p-4 pb-2 pe-4 text-right text-white md:text-xl">
+      <h2 className="codecPro-bold w-full px-[3vw] pb-[1vw] pt-[2vw] text-right text-[2vw] text-white">
         {title}
       </h2>
       <div className="group relative flex items-center">
@@ -48,13 +96,16 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
         >
           {id === 2 ? (
             <>
-              <div className="relative inline-block cursor-pointer p-2">
-                <img
-                  src={require("../../assets/movies2/3@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
+              <MovieCardAnimated src={require("../../assets/movies2/thumbnaillTheLastExit.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/thumbnaillThePlanetCafter.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/thumbnailtech.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/zayed.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/ze.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/free.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/hadara.jpg")} />
+              <MovieCardAnimated src={require("../../assets/movies2/thumbnail-l-Mission-8.jpg")} />
+
+              {/* <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
                 <img
                   src={require("../../assets/movies2/1@2x.png")}
                   className="block h-[314px] w-full object-cover"
@@ -65,182 +116,25 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
                   src={require("../../assets/movies2/2@2x.png")}
                   className="block h-[314px] w-full object-cover"
                 />
-              </div>
-
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/4@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block cursor-pointer p-2">
-                <img
-                  src={require("../../assets/movies2/3@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/1@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/2@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/4@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block cursor-pointer p-2">
-                <img
-                  src={require("../../assets/movies2/3@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/1@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/2@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/4@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block cursor-pointer p-2">
-                <img
-                  src={require("../../assets/movies2/3@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/1@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/2@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
-
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies2/4@2x.png")}
-                  className="block h-[314px] w-full object-cover"
-                />
-              </div>
+              </div> */}
             </>
           ) : (
             <>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/2@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/3@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/4@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/5@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/6@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/2@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/2@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/3@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/4@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/5@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/6@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/2@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/4@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/5@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-              <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
-                <img
-                  src={require("../../assets/movies/6@2x.png")}
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
+              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              <MovieCard src={require("../../assets/movies/3@2x.png")} />
+              <MovieCard src={require("../../assets/movies/4@2x.png")} />
+              <MovieCard src={require("../../assets/movies/5@2x.png")} />
+              <MovieCard src={require("../../assets/movies/6@2x.png")} />
+              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              <MovieCard src={require("../../assets/movies/3@2x.png")} />
+              <MovieCard src={require("../../assets/movies/4@2x.png")} />
+              <MovieCard src={require("../../assets/movies/5@2x.png")} />
+              <MovieCard src={require("../../assets/movies/6@2x.png")} />
+              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              <MovieCard src={require("../../assets/movies/4@2x.png")} />
+              <MovieCard src={require("../../assets/movies/5@2x.png")} />
+              <MovieCard src={require("../../assets/movies/6@2x.png")} />
             </>
           )}
           {/* {movies?.map((item: any) => (

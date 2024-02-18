@@ -30,9 +30,14 @@
   font-family: "CodecPro-ExtraBold";
   src: url("../public/fonts/CodecPro-ExtraBold.otf");
 }
+
 @font-face {
   font-family: "CodecPro-Regular";
-  src: url("./assets/fonts/CodecPro-Regular.ttf");
+  src: url("../public/fonts/CodecPro-Regular.otf");
+}
+@font-face {
+  font-family: "CodecPro-Light";
+  src: url("../public/fonts/CodecPro-Light.otf");
 }
 
 html,
@@ -80,6 +85,10 @@ body {
   font-family: "CodecPro-Regular";
   overflow-x: hidden;
 }
+#Homepage {
+  font-family: "CodecPro-Light";
+  overflow-x: hidden;
+}
 .codecPro-bold {
   font-family: "CodecPro-Bold";
   font-weight: normal;
@@ -88,4 +97,8 @@ body {
 .codecPro-ExtraBold {
   font-family: "CodecPro-ExtraBold";
   font-weight: 400;
+}
+
+.custom-carousel svg {
+  /* @apply w-4; */
 }

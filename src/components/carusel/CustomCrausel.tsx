@@ -8,13 +8,12 @@ export function CustomCrausel() {
   const [activePage, setActivePage] = useState(0);
   return (
     <AnimatePresence>
-      <Carousel
+      {/* <Carousel
         placeholder={null}
-        // className="xl:h-[100vh]"
+        // className="h-[80vw] max-h-[80vw]"
+        className="custom-carousel h-[45.29vw]"
         autoplay
-        onPlay={() => console.log("Play")}
         loop
-        onAnimationStartCapture={(props) => console.log({ props })}
         navigation={({ setActiveIndex, activeIndex, length }) => {
           setActivePage(activeIndex);
           return (
@@ -22,8 +21,8 @@ export function CustomCrausel() {
               {new Array(length).fill("").map((_, i) => (
                 <span
                   key={i}
-                  className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                    activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                  className={`block h-2 cursor-pointer rounded-sm transition-all content-[''] ${
+                    activeIndex === i ? "w-8 bg-white" : "w-4 bg-white"
                   }`}
                   onClick={() => {
                     setActiveIndex(i);
@@ -53,10 +52,11 @@ export function CustomCrausel() {
             image: require("../../assets/photo3.png"),
             // "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
           },
+          
         ].map((item, index) => (
           <Item key={item.title} item={item} isActive={activePage === index} />
         ))}
-      </Carousel>
+      </Carousel> */}
     </AnimatePresence>
   );
 }

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import HomeHeader from "./HomeHeader";
 
 const DashHeader = () => {
   const location = useLocation();
@@ -10,14 +11,10 @@ const DashHeader = () => {
     <motion.header
       // initial={{ y: "-100vh" }}
       // animate={{ y: 0, transition: { duration: 0.5 } }}
-      className="absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent px-[7vw] py-[3.75vw] text-white"
+      className={`absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent ${isHome ? 'px-[3vw]': 'px-[7vw]'} ${isHome ? 'py-[2.25vw]': 'py-[3.75vw]'}  text-white`}
     >
       {isHome ? (
-        <img
-          src={require("../../assets/nav.png")}
-          alt="Switch Nav"
-          className="w-full object-contain bg-blend-color-burn "
-        />
+        <HomeHeader />
       ) : (
         <>
           <img
