@@ -1,4 +1,3 @@
-import { CustomCrausel } from "../components/carusel";
 import { RowSection } from "../components/home";
 import { HomeCarausel } from "../components/home/HomeCarausel";
 import { DashWrapper } from "../components/wrapper";
@@ -62,7 +61,7 @@ const Homepage = () => {
               "وثائقيات",
             ].map((item) => (
               <div
-                className="relative mx-[0.6vw] inline-block cursor-pointer rounded-md "
+                className="relative mx-[0.6vw] my-[0.1vw] inline-block cursor-pointer"
                 style={{
                   backgroundImage: `url(/imgs/btnbg.png)`,
                   backgroundPosition: "center",
@@ -103,88 +102,8 @@ const Homepage = () => {
       <div className="m-auto pb-[6.25vw] pt-[7vw]">
         <h3 className="w-full text-center leading-tight text-white text-[2.5vw]">
           ادخل إلى عالم رائع من <br />
-          <span className="text-[#27FF55]">المنتجات الأصلية</span> الحصرية<br /> في
-          التعليم والترفيه<span>!</span>
-        </h3>
-      </div>
-    </DashWrapper>
-  );
-  return (
-    <DashWrapper id="landingpage">
-      {/* <HomeSection /> */}
-      <CustomCrausel />
-      {[
-        { title: "الأكثر مشاهدة", requestUrl: MOVIES.upcomming, id: 1 },
-        { title: "الأصلية Switch أعمال", requestUrl: MOVIES.popular, id: 2 },
-        // { title: "Trending", requestUrl: MOVIES.trending },
-        // { title: "Top Rated", requestUrl: MOVIES.topRated },
-        // { title: "Horror", requestUrl: MOVIES.horror },
-      ].map((item) => (
-        <RowSection
-          key={item.title}
-          title={item.title}
-          requestUrl={item.requestUrl}
-          id={item.id}
-        />
-      ))}
-
-      <section>
-        <h2 className="codecPro-bold w-full p-4 pb-2 pe-4 text-end text-white md:text-xl">
-          تصفح حسب الفئة
-        </h2>
-        <div className="group relative flex items-center">
-          <div className="no-scrollbar relative h-full w-full overflow-x-scroll scroll-smooth whitespace-nowrap">
-            {[
-              "أفلام قصيرة",
-              "برامج",
-              "بودكاست",
-              "وثائقيات",
-              "أفلام قصيرة",
-              "برامج",
-              "بودكاست",
-              "وثائقيات",
-              "أفلام قصيرة",
-              "برامج",
-              "بودكاست",
-              "وثائقيات",
-              "أفلام قصيرة",
-              "برامج",
-              "بودكاست",
-              "وثائقيات",
-            ].map((item) => (
-              <div
-                className="relative mx-[0.6vw] inline-block cursor-pointer rounded-md"
-                style={{
-                  backgroundImage: `url(/imgs/btnbg.png)`,
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "cover",
-                }}
-              >
-                <p className="codecPro-bold flex w-full items-end whitespace-normal px-[2vw] py-[1.5vw] text-center text-[1vw] text-white">
-                  {item}
-                </p>
-                {/* <img
-                  src={require("../assets/btnbg.png")}
-                  className="block h-auto rounded-md object-cover"
-                  alt="btn"
-                /> */}
-                {/* <div className="absolute left-1/2 top-1/2 z-30 flex w-full -translate-x-1/2 -translate-y-1/2 transform items-center justify-center text-white">
-                  <p className="codecPro-bold flex h-full w-fit items-end whitespace-normal pb-2 text-center text-[1vw]">
-                    {item}
-                  </p>
-                </div> */}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <div className="m-auto pb-20 pt-32">
-        <h3 className="w-full text-center leading-tight text-white">
-          ادخل إلى عالم رائع من <br />
-          <span className="text-[#27FF55]">المنتجات الأصلية</span> الحصرية{" "}
-          <br />
-          في التعليم والترفيه<span>!</span>
+          <span className="text-[#27FF55]">المنتجات الأصلية</span> الحصرية<br /> !في
+          التعليم والترفيه
         </h3>
       </div>
     </DashWrapper>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { truncateString } from "../../utils/helper";
-import { useWindowDimensions } from "../../hooks";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = ({
   item,
@@ -12,20 +11,20 @@ const HeroSection = ({
     logo: string;
     des: string;
     flag: string;
-    video?: string;
+    video?: boolean;
     serious: number;
     epsiod: number;
     tags: string;
     location: string;
     copyRights: JSX.Element;
-    x?: string
+    x?: string;
   };
 }) => {
-  const { width } = useWindowDimensions();
+  const navigate = useNavigate();
   return (
     <motion.section
       animate={{ opacity: 1 }}
-      className="webp-bg h-full w-full text-white"
+      className="webp-bg relative h-full w-full text-white"
       style={{
         backgroundSize: "cover",
         backgroundImage: `url(${item.banner})`,
@@ -33,14 +32,16 @@ const HeroSection = ({
         backgroundPosition: "center",
       }}
     >
-      <div className="relative h-full w-full">
-        <div
-          className={`absolute flex h-full w-full justify-end bg-gradient-to-t from-black via-white/10 to-black/40 ${width < 1480 ? "items-center" : "items-end"}`}
-        >
-          <div className="mb-[3.5vw] flex w-full flex-col items-end justify-center px-[3vw] text-right text-[0.75vw]">
+      <div
+        className={`absolute flex h-full w-full justify-end bg-gradient-to-t from-black via-black/10 to-black/40 pt-[5vw]`}
+        // className={`absolute flex h-full w-full justify-end bg-gradient-to-t from-black via-white/10 to-black/40 ${width < 1480 ? "items-center" : "items-end"}`}
+      >
+        <div className="flex w-full flex-col items-end justify-evenly px-[3vw] text-right text-[0.75vw]">
+          {/* <div className="mb-[3.5vw] flex w-full flex-col items-end justify-center px-[3vw] text-right text-[0.75vw]"> */}
+          <div className="flex-2 flex flex-col items-end justify-center">
             {item.flag && (
               <div className="mb-2 flex items-center justify-center rounded-[0.35vw] bg-[#27FF55] px-[1vw] text-black">
-                <span className="codecPro-bold  text-center uppercase">
+                <span className="codecPro-bold text-center uppercase -mb-1">
                   {item.flag}
                 </span>
               </div>
@@ -64,7 +65,7 @@ const HeroSection = ({
             <img
               alt={item.title}
               src={item.logo}
-              className="mt-[3vw] h-full w-[32%] object-fill"
+              className="mt-[3vw] h-auto w-[28vw] object-fill"
             />
             <motion.p
               // initial={{ y: "100vh" }}
@@ -72,28 +73,29 @@ const HeroSection = ({
               className="mt-[3vw] w-full whitespace-pre-line text-[0.93vw] text-white"
             >
               {item.des}
-
-              {/* {truncateString(item.des, 250)} */}
             </motion.p>
-            <motion.div className="mb-[1.5vw] mt-[3.5vw] flex w-full items-center gap-6">
+          </div>
+          <div className="w-full ">
+            <motion.div className="mb-[1.5vw]  flex w-full items-center gap-6">
               <motion.span
                 // initial={{ x: "-100vw" }}
                 // animate={{ x: 0, transition: { duration: 0.5 } }}
-                className="w-full flex-1 text-[1vw] text-gray-400"
+                className="codecPro-bold w-full flex-1 text-[1vw] text-gray-400"
               >
                 {item.x ?? `الموسم ${item.serious} - الحلقة ${item.epsiod}`}
-                
               </motion.span>
 
               <button
-                onClick={() => alert("Comming soon")}
-                className="rounded-[0.25vw] bg-[#4D17CE] px-[3vw] py-[.75vw] text-[1vw] text-white"
+                onClick={() =>
+                  item.video && navigate("/video/ddf7aeebdb64677682cbbf0d967a4a92")
+                }
+                className="codecPro-bold rounded-[0.25vw] bg-[#4D17CE] px-[3vw] py-[.75vw] text-[1vw] text-white"
               >
                 شاهد الآن
               </button>
             </motion.div>
             <div className="flex w-full items-center justify-between">
-              <p className="text-[1.25vw]">{item.copyRights}</p>
+              <p className="text-[1vw]">{item.copyRights}</p>
               <img
                 alt={item.title}
                 src={item.tags}
@@ -102,11 +104,6 @@ const HeroSection = ({
             </div>
           </div>
         </div>
-        {/* <img
-          alt={item.des}
-          src={item.banner}
-          className="h-full w-full object-cover"
-        /> */}
       </div>
     </motion.section>
   );

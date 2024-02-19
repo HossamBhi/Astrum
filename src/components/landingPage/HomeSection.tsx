@@ -19,7 +19,7 @@ const HomeSection = () => {
             <div className="grid w-[40vw] grid-cols-7 gap-2">
               <input
                 placeholder="عنوان البريد الإلكتروني"
-                className="col-span-5 w-full rounded-[0.25vw] border-[.5px] border-white/50 bg-[#00000061] px-[1vw] py-[.75vw] text-[1vw] placeholder-[#FFFFFF63] outline-none"
+                className="col-span-5 w-full rounded-[0.25vw] border-[.5px] border-white/50 bg-[#00000061] px-[1vw] py-[.75vw] text-[0.75vw] text-[#FFFFFF63] outline-none"
               />
               <button
                 onClick={() =>
@@ -31,10 +31,9 @@ const HomeSection = () => {
               </button>
             </div>
             <motion.p className="w-full pb-[1vw] pt-[3.5vw] text-center text-[1vw] !leading-tight opacity-80">
-              .استمتع بعالم من المحتوى العربي <br />
-              الترفيهي والتعليمي المتنوع
+              استمتع بعالم من المحتوى العربي <br />. الترفيهي والتعليمي المتنوع
             </motion.p>
-            <strong className="z-30 w-full text-center text-[1vw] codecPro-bold">
+            <strong className="codecPro-bold z-30 w-full text-center text-[1vw]">
               مجاني بالكامل
             </strong>
           </div>

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const HomeHeader = () => {
+  const navigate = useNavigate()
   return (
     <motion.header
       // initial={{ y: "-100vh" }}
@@ -10,8 +12,10 @@ const HomeHeader = () => {
     >
       <div className="flex w-full flex-1 items-center">
         <img
-          src={`${process.env.PUBLIC_URL}/imgs/logo-category.png`}
-          className="w-[12.77vw] object-contain me-[2vw]"
+          src={`${process.env.PUBLIC_URL}/imgs/Logo-Switch.svg`}
+          className="w-[12.77vw] object-contain me-[2vw] cursor-pointer"
+          onClick={() => navigate('/switch/ddf7aeebdb64677682cbbf0d967a4a92')}
+          alt="Logo category"
         />
         <ul className="flex px-2">
           <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">المزيد</li>
@@ -38,13 +42,14 @@ const HomeHeader = () => {
           </li>
           <li className="cursor-pointer">
             <span className="cursor-pointer px-[0.75vw]">
-              New
+              Now
             </span>
           </li>
         </ul>
         <img
           src={`${process.env.PUBLIC_URL}/imgs/navicon.png`}
           className="w-[2vw]"
+          alt="nav icon"
         />
       </div>
     </motion.header>

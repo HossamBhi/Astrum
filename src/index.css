@@ -67,6 +67,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 @layer utilities {
@@ -101,4 +102,9 @@ body {
 
 .custom-carousel svg {
   /* @apply w-4; */
+}
+
+input::placeholder {
+  height: 30px;
+  opacity: .8;
 }

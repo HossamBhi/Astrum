@@ -1,19 +1,29 @@
-import { Carousel, IconButton } from "@material-tailwind/react";
-import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { Carousel } from "@material-tailwind/react";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import HeroSection from "./HeroSection";
+import { useWindowDimensions } from "../../hooks";
 
 export function HomeCarausel() {
-  const [activePage, setActivePage] = useState(0);
+  const {height} = useWindowDimensions()
   return (
     <Carousel
-      placeholder={null}
-      // className="h-[80vw] max-h-[80vw]"
-      className="custom-carousel h-[65vh] pb-5 md:h-[45vh] xl:h-[75vh] 2xl:h-[85vh]"
-      // autoplay
+      placeholder={<></>}
+      nextArrow={(props) => (
+        <MdChevronRight
+          className="absolute right-[0.5vw] top-2/4 block -translate-y-2/4 cursor-pointer rounded-full bg-white text-[1.75vw] opacity-50 hover:opacity-100"
+          onClick={props.handleNext}
+        />
+      )}
+      prevArrow={(props) => (
+        <MdChevronLeft
+          className="absolute left-[0.5vw] top-2/4 block -translate-y-2/4 cursor-pointer rounded-full bg-white text-[1.75vw] opacity-50 hover:opacity-100"
+          onClick={props.handlePrev}
+        />
+      )}
+      className={`custom-carousel h-[45vh] pb-5 ${height > 700 ? "md:h-[45vh]": "md:h-[75vh]"} xl:h-[75vh] 2xl:h-[85vh]`}
+      autoplay
       loop
       navigation={({ setActiveIndex, activeIndex, length }) => {
-        setActivePage(activeIndex);
         return (
           <div className="absolute bottom-0 left-2/4 z-50 flex -translate-x-2/4 gap-2">
             {new Array(length).fill("").map((_, i) => (
@@ -35,12 +45,13 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-1.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-1.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner1-logo.png",
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner1-flag.png",
+          video: true,
+          tags: process.env.PUBLIC_URL + "/imgs/VR.svg",
           location: "في الإمارات العربية المتحدة",
           copyRights: (
             <>
@@ -55,14 +66,14 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-2.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-2.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner2-logo.png",
           flag: "",
           isComming: true,
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner6-flag.png",
-          location: 'DECEMBER 2',
+          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          location: "DECEMBER 2",
           copyRights: (
             <>
               A{" "}
@@ -76,26 +87,26 @@ export function HomeCarausel() {
         {
           title: "image 9",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-9.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-9.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner9-logo.png",
           flag: "top 10",
           serious: 3,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner6-flag.png",
+          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
           location: "في المملكة العربية السعودية",
           copyRights: <></>,
-          x: "فيلم وثائقي"
+          x: "فيلم وثائقي",
         },
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-8.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-8.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner8-logo.png",
           flag: "",
           isComming: true,
           serious: 3,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner1-flag.png",
+          tags: process.env.PUBLIC_URL + "/imgs/VR.svg",
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -110,12 +121,12 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-7.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-7.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner7-logo.png",
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner6-flag.png",
+          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
           location: "في المملكة العربية السعودية",
           copyRights: (
             <>
@@ -130,14 +141,14 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-4.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-4.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner4-logo.png",
           flag: "",
           isComming: true,
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner6-flag.png",
-          location: 'DECEMBER 2',
+          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          location: "DECEMBER 2",
           copyRights: (
             <>
               A{" "}
@@ -151,26 +162,26 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-6.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-6.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner6-logo.png",
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner6-flag.png",
+          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
           location: "في المملكة العربية السعودية",
           copyRights: <></>,
         },
         {
           title: "image 3",
           des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-3.webp",
+          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-3.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner3-logo.png",
           flag: "",
           isComming: true,
           serious: 3,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/banners/banner6-flag.png",
-          location: 'DECEMBER 2',
+          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          location: "DECEMBER 2",
           copyRights: (
             <>
               A{" "}
@@ -181,28 +192,6 @@ export function HomeCarausel() {
             </>
           ),
         },
-        // {
-        //   title: "image 3",
-        //   des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n  لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-        //   banner: process.env.PUBLIC_URL + "/imgs/banners/12.webp",
-        //   logo: process.env.PUBLIC_URL + "/imgs/banners/banner1-logo.png",
-        //   flag: "top 10",
-        //   serious: 1,
-        //   epsiod: 1,
-        //   tags: process.env.PUBLIC_URL + "/imgs/banners/banner1-flag.png",
-        //   location: "في الإمارات العربية المتحدة",
-        // },
-        // {
-        //   title: "image 3",
-        //   des:`مستقبل الرعاية الصحية, زراعة الرقائق الدقيقة ستصبح الرعاية الصحية \nرقمية بالكامل في أقل من 30 عاماً، وستصبح الزيارات إلى الطبيب غير ضرورية`,
-        //   banner: process.env.PUBLIC_URL + "/imgs/banners/test.webp",
-        //   logo: process.env.PUBLIC_URL + "/imgs/banners/banner1-logo.png",
-        //   flag: "top 10",
-        //   serious: 1,
-        //   epsiod: 1,
-        //   tags: process.env.PUBLIC_URL + "/imgs/banners/banner1-flag.png",
-        //   location: "في الإمارات العربية المتحدة",
-        // },
       ].map((item, index) => (
         <HeroSection key={index} item={item} />
       ))}

@@ -8,7 +8,11 @@ const FooterOne = () => {
         // className="h-full w-full rotate-180 object-cover"
       />
       <div className="absolute left-1/2 top-1/2 z-40 flex -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center">
-        <img src={require("../../assets/logo-white.png")} className="w-[30%]" />
+        <img
+          // src={require("../../assets/logo-white.png")}
+          src={`${process.env.PUBLIC_URL}/imgs/Switch-Landing-page.svg`}
+          className="w-[30%]"
+        />
         <img
           src={require("../../assets/Font.png")}
           className="mt-[4vw] w-[60%]"

@@ -40,15 +40,11 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
 
   const MovieCard = ({ src, alt }: HTMLProps<HTMLImageElement>) => (
     <motion.div
-      // initial={{ width: width < 1920 ? "24vw": "15vw" }}
-      // // animate={{ width: "80%" }}
-      // whileHover={{
-      //   width: width < 1920 ? "45vw": "35vw",
-      //   // minWidth: "150%",
-      //   transition: { duration: 0.25 },
-      // }}
-      // className="relative inline-block cursor-pointer p-2"
-      className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[18%]"
+      whileHover={{
+        borderWidth: 2,
+        transition: {duration: 0}
+      }} // className="relative inline-block cursor-pointer p-2"
+      className="relative m-2 inline-block w-[160px] cursor-pointer overflow-hidden rounded-[14px] border-[#4D17CE] sm:w-[200px] md:w-[18%]"
     >
       <motion.img
         // className="h-[12vw] w-full object-cover"
@@ -60,12 +56,13 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
   );
   const MovieCardAnimated = ({ src, alt }: HTMLProps<HTMLImageElement>) => (
     <motion.div
-      initial={{ width: width < 1920 ? "24vw": "17vw" }}
+      initial={{ width: width < 1920 ? "24vw" : "17vw" }}
       // animate={{ width: "80%" }}
       whileHover={{
-        width: width < 1920 ? "45vw": "37vw",
+        width: width < 1920 ? "45vw" : "37vw",
         // minWidth: "150%",
-        transition: { duration: 0.25 },
+        // originY: -10,
+        transition: { duration: 0.25, },
       }}
       className="relative inline-block cursor-pointer p-2"
       // className="relative inline-block cursor-pointer px-[0.5vw]"
@@ -96,14 +93,28 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
         >
           {id === 2 ? (
             <>
-              <MovieCardAnimated src={require("../../assets/movies2/thumbnaillTheLastExit.jpg")} />
-              <MovieCardAnimated src={require("../../assets/movies2/thumbnaillThePlanetCafter.jpg")} />
-              <MovieCardAnimated src={require("../../assets/movies2/thumbnailtech.jpg")} />
-              <MovieCardAnimated src={require("../../assets/movies2/zayed.jpg")} />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/thumbnaillTheLastExit.jpg")}
+              />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/thumbnaillThePlanetCafter.jpg")}
+              />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/thumbnailtech.jpg")}
+              />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/zayed.jpg")}
+              />
               <MovieCardAnimated src={require("../../assets/movies2/ze.jpg")} />
-              <MovieCardAnimated src={require("../../assets/movies2/free.jpg")} />
-              <MovieCardAnimated src={require("../../assets/movies2/hadara.jpg")} />
-              <MovieCardAnimated src={require("../../assets/movies2/thumbnail-l-Mission-8.jpg")} />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/free.jpg")}
+              />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/hadara.jpg")}
+              />
+              <MovieCardAnimated
+                src={require("../../assets/movies2/thumbnail-l-Mission-8.jpg")}
+              />
 
               {/* <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
                 <img
@@ -120,18 +131,18 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
             </>
           ) : (
             <>
-              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              {/* <MovieCard src={require("../../assets/movies/2@2x.png")} /> */}
               <MovieCard src={require("../../assets/movies/3@2x.png")} />
               <MovieCard src={require("../../assets/movies/4@2x.png")} />
               <MovieCard src={require("../../assets/movies/5@2x.png")} />
               <MovieCard src={require("../../assets/movies/6@2x.png")} />
-              <MovieCard src={require("../../assets/movies/2@2x.png")} />
-              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              {/* <MovieCard src={require("../../assets/movies/2@2x.png")} /> */}
+              {/* <MovieCard src={require("../../assets/movies/2@2x.png")} /> */}
               <MovieCard src={require("../../assets/movies/3@2x.png")} />
               <MovieCard src={require("../../assets/movies/4@2x.png")} />
               <MovieCard src={require("../../assets/movies/5@2x.png")} />
               <MovieCard src={require("../../assets/movies/6@2x.png")} />
-              <MovieCard src={require("../../assets/movies/2@2x.png")} />
+              {/* <MovieCard src={require("../../assets/movies/2@2x.png")} /> */}
               <MovieCard src={require("../../assets/movies/4@2x.png")} />
               <MovieCard src={require("../../assets/movies/5@2x.png")} />
               <MovieCard src={require("../../assets/movies/6@2x.png")} />

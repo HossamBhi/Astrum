@@ -11,14 +11,16 @@ const DashHeader = () => {
     <motion.header
       // initial={{ y: "-100vh" }}
       // animate={{ y: 0, transition: { duration: 0.5 } }}
-      className={`absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent ${isHome ? 'px-[3vw]': 'px-[7vw]'} ${isHome ? 'py-[2.25vw]': 'py-[3.75vw]'}  text-white`}
+      className={`absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent ${isHome ? 'px-[3vw]': 'px-[7vw]'} ${isHome ? 'pt-[2.25vw]': 'py-[3.75vw]'}  text-white`}
     >
       {isHome ? (
         <HomeHeader />
       ) : (
         <>
           <img
-            src={require("../../assets/logo-white.png")}
+            // src={require("../../assets/logo-white.png")}
+            src={`${process.env.PUBLIC_URL}/imgs/Switch-Landing-page.svg`}
+            
             alt="Switch Logo"
             className="w-[15.77vw] object-contain"
             // className="w-[120px] object-contain sm:w-[150px] md:w-[151px] 2xl:w-[250px] 4xl:w-[400px]"
