@@ -2,9 +2,11 @@ import { Carousel } from "@material-tailwind/react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import HeroSection from "./HeroSection";
 import { useWindowDimensions } from "../../hooks";
+import VR from "../../assets/VR";
+import FourK from "../../assets/FourK";
 
 export function HomeCarausel() {
-  const {height} = useWindowDimensions()
+  const { height } = useWindowDimensions();
   return (
     <Carousel
       placeholder={<></>}
@@ -20,7 +22,7 @@ export function HomeCarausel() {
           onClick={props.handlePrev}
         />
       )}
-      className={`custom-carousel h-[45vh] pb-5 ${height > 700 ? "md:h-[45vh]": "md:h-[75vh]"} xl:h-[75vh] 2xl:h-[85vh]`}
+      className={`custom-carousel h-[45vh] pb-5 ${height > 700 ? "md:h-[45vh]" : "md:h-[75vh]"} xl:h-[75vh] 2xl:h-[85vh]`}
       autoplay
       loop
       navigation={({ setActiveIndex, activeIndex, length }) => {
@@ -51,7 +53,7 @@ export function HomeCarausel() {
           serious: 1,
           epsiod: 1,
           video: true,
-          tags: process.env.PUBLIC_URL + "/imgs/VR.svg",
+          tags: <VR width={'7vw'}/>,
           location: "في الإمارات العربية المتحدة",
           copyRights: (
             <>
@@ -72,7 +74,7 @@ export function HomeCarausel() {
           isComming: true,
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          tags: <FourK width={"7vw"}/>,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -92,7 +94,7 @@ export function HomeCarausel() {
           flag: "top 10",
           serious: 3,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          tags: <FourK width={"7vw"}/>,
           location: "في المملكة العربية السعودية",
           copyRights: <></>,
           x: "فيلم وثائقي",
@@ -106,7 +108,7 @@ export function HomeCarausel() {
           isComming: true,
           serious: 3,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/VR.svg",
+          tags: <VR  width={'7vw'}/> ,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -126,7 +128,7 @@ export function HomeCarausel() {
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          tags: <FourK width={"7vw"}/>,
           location: "في المملكة العربية السعودية",
           copyRights: (
             <>
@@ -147,7 +149,7 @@ export function HomeCarausel() {
           isComming: true,
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          tags: <FourK width={"7vw"}/>,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -167,7 +169,7 @@ export function HomeCarausel() {
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          tags: <FourK width={"7vw"}/>,
           location: "في المملكة العربية السعودية",
           copyRights: <></>,
         },
@@ -180,7 +182,7 @@ export function HomeCarausel() {
           isComming: true,
           serious: 3,
           epsiod: 1,
-          tags: process.env.PUBLIC_URL + "/imgs/4K.svg",
+          tags: <FourK width={"7vw"}/>,
           location: "DECEMBER 2",
           copyRights: (
             <>

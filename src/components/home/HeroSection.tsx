@@ -14,7 +14,7 @@ const HeroSection = ({
     video?: boolean;
     serious: number;
     epsiod: number;
-    tags: string;
+    tags: any;
     location: string;
     copyRights: JSX.Element;
     x?: string;
@@ -96,11 +96,12 @@ const HeroSection = ({
             </motion.div>
             <div className="flex w-full items-center justify-between">
               <p className="text-[1vw]">{item.copyRights}</p>
-              <img
+             {item.tags}
+              {/* <img
                 alt={item.title}
                 src={item.tags}
                 className="h-full w-[7vw] object-fill"
-              />
+              /> */}
             </div>
           </div>
         </div>

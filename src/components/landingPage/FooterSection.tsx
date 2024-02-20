@@ -1,12 +1,15 @@
+import LogoBlack from "../../assets/LogoBlack";
+
 const FooterSection = () => {
   return (
     <div className="flex w-full flex-col items-center justify-between bg-white px-[5%] py-[3.25vw] text-black">
       <div className="flex w-full justify-between">
-        <img
+        <LogoBlack width={'15.77vw'}/>
+        {/* <img
           src={`${process.env.PUBLIC_URL}/imgs/Switch-black.svg`}
           className="w-[15.77vw] object-contain -tracking-[1px]"
           alt="Switch logo"
-        />
+        /> */}
         <h3 className="codecPro-bold text-end text-[2.75vw] -tracking-[1px]">أعمال أصلية</h3>
       </div>
       <div className="flex h-full w-full justify-between pt-[3.25vw]">

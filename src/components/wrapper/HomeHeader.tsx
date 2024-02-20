@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import LogoCategory from "../../assets/LogoCategory";
 
 const HomeHeader = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <motion.header
       // initial={{ y: "-100vh" }}
@@ -11,17 +12,26 @@ const HomeHeader = () => {
       className="flex w-full items-center justify-between bg-transparent text-white"
     >
       <div className="flex w-full flex-1 items-center">
-        <img
+        <div
+          className="me-[2vw] cursor-pointer object-contain"
+          onClick={() => navigate("/switch/ddf7aeebdb64677682cbbf0d967a4a92")}
+          
+        >
+          <LogoCategory width={"12.77vw"} />
+        </div>
+        {/* <img
           src={`${process.env.PUBLIC_URL}/imgs/Logo-Switch.svg`}
           className="w-[12.77vw] object-contain me-[2vw] cursor-pointer"
           onClick={() => navigate('/switch/ddf7aeebdb64677682cbbf0d967a4a92')}
           alt="Logo category"
-        />
+        /> */}
         <ul className="flex px-2">
           <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">المزيد</li>
           <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">بودكاست</li>
           <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">برامج</li>
-          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">أفلام قصيرة</li>
+          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">
+            أفلام قصيرة
+          </li>
           <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">وثائقيات</li>
         </ul>
       </div>
@@ -41,9 +51,7 @@ const HomeHeader = () => {
             </span>
           </li>
           <li className="cursor-pointer">
-            <span className="cursor-pointer px-[0.75vw]">
-              Now
-            </span>
+            <span className="cursor-pointer px-[0.75vw]">Now</span>
           </li>
         </ul>
         <img
