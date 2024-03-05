@@ -81,7 +81,7 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
       <h2 className="codecPro-bold w-full px-[3vw] pb-[1vw] pt-[2vw] text-right text-[2vw] text-white">
         {title}
       </h2>
-      <div className="group relative flex items-center">
+      <div className="group relative flex items-center" dir="rtl">
         <MdChevronLeft
           className="absolute left-0 z-10 hidden cursor-pointer rounded-full bg-white opacity-50 hover:opacity-100 group-hover:block"
           onClick={slideLeft}

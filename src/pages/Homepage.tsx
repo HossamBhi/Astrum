@@ -43,25 +43,15 @@ const Homepage = () => {
         <div className="group relative flex items-center">
           <div className="no-scrollbar relative h-full w-full overflow-x-scroll scroll-smooth whitespace-nowrap">
             {[
-              "أفلام قصيرة",
-              "برامج",
+              "المزيد",
               "بودكاست",
-              "وثائقيات",
-              "أفلام قصيرة",
               "برامج",
-              "بودكاست",
-              "وثائقيات",
               "أفلام قصيرة",
-              "برامج",
-              "بودكاست",
-              "وثائقيات",
-              "أفلام قصيرة",
-              "برامج",
-              "بودكاست",
               "وثائقيات",
             ].map((item) => (
               <div
-                className="relative mx-[0.6vw] my-[0.1vw] inline-block cursor-pointer"
+                className="relative my-[0.1vw] inline-block cursor-pointer w-[19%] mx-[0.5%]"
+                // className="relative mx-[0.6vw] my-[0.1vw] inline-block cursor-pointer"
                 style={{
                   backgroundImage: `url(/imgs/btnbg.png)`,
                   backgroundPosition: "center",
@@ -69,7 +59,8 @@ const Homepage = () => {
                   backgroundSize: "contain",
                 }}
               >
-                <p className="codecPro-bold  whitespace-normal px-[2vw] py-[4vw] text-center text-[1.75vw] text-white w-[18vw]">
+                <p className="codecPro-bold whitespace-normal py-[4vw] text-center text-[1.75vw] text-white w-[18vw]">
+                {/* <p className="codecPro-bold whitespace-normal px-[2vw] py-[4vw] text-center text-[1.75vw] text-white w-[18vw]"> */}
                   {item}
                 </p>
                 {/* <img
@@ -101,7 +92,7 @@ const Homepage = () => {
       </section>
       <div className="m-auto pb-[6.25vw] pt-[7vw]">
         <h3 className="w-full text-center leading-tight text-white text-[2.5vw]">
-          ادخل إلى عالم رائع من <br />
+           عالم رائع من <br />
           <span className="text-[#27FF55]">المنتجات الأصلية</span> الحصرية<br /> !في
           التعليم والترفيه
         </h3>

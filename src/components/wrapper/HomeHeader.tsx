@@ -47,7 +47,7 @@ const HomeHeader = () => {
           </li>
           <li className="cursor-pointer text-[0.75vw]">
             <span className="cursor-pointer border-r-2 px-[0.75vw]">
-              Famliy & Kids
+              Family & Kids
             </span>
           </li>
           <li className="cursor-pointer">

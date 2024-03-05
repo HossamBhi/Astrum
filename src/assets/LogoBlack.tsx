@@ -1,7 +1,10 @@
 import React from "react";
 
 const LogoBlack = ({ width=657.067, height }: { width?: string | number; height?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={width} height="93.025" viewBox="0 0 657.067 93.025">
+  < 
+    
+  
+  svg xmlns="http://www.w3.org/2000/svg" width={width} height="93.025" viewBox="0 0 657.067 93.025">
   <g id="Group_1588" data-name="Group 1588" transform="translate(-2624.6 -18336.975)">
     <g id="Switch" transform="translate(2330.782 18194.275)">
       <g id="Group_1580" data-name="Group 1580" transform="translate(658.409 142.7)">
@@ -27,7 +30,7 @@ const LogoBlack = ({ width=657.067, height }: { width?: string | number; height?
       </g>
     </g>
     <rect id="Rectangle_176" data-name="Rectangle 176" width="5" height="93" transform="translate(3084 18337)"/>
-    <text id="عربية" transform="translate(3122 18403)" fill="#000" font-size="65" font-family="CodecPro-ExtraBold, Codec Pro"><tspan x="0" y="0">عربية</tspan></text>
+    <text id="عربية" transform="translate(3122 18403)" fill="#000" font-size="65" font-family="CodecPro-ExtraBold, Codec Pro" style={{letterSpacing: -3}}><tspan x="0" y="0">عربية</tspan></text>
     <path id="registered-regular" d="M6,1.126A4.878,4.878,0,1,1,1.126,6,4.878,4.878,0,0,1,6,1.126ZM6,12.007A6,6,0,1,0,0,6,6,6,0,0,0,6,12.007ZM3.752,3.565V8.442a.563.563,0,1,0,1.126,0V6.754H6.306l.872,1.921A.563.563,0,1,0,8.2,8.208L7.4,6.449A1.876,1.876,0,0,0,6.379,3H4.315A.561.561,0,0,0,3.752,3.565ZM4.878,5.628v-1.5h1.5a.75.75,0,0,1,0,1.5Z" transform="translate(3269.66 18349.994)"/>
   </g>
 </svg>

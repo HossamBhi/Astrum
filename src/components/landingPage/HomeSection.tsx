@@ -7,7 +7,15 @@ const HomeSection = () => {
     <motion.section className="h-[50.29vw] w-full text-white">
       <div className="relative h-full w-full bg-gradient-to-r from-black/40 to-black/40">
         <div className="absolute flex h-full w-full items-end justify-center pb-[3.5vw] pt-16">
-          <div className="z-10 flex flex-col items-center justify-center text-white">
+          <motion.div
+            // initial={{ y: 50, opacity: 0 }}
+            // animate={{
+            //   opacity: 1,
+            //   y: 0,
+            //   transition: { duration: 0.3, delay: 0.3 },
+            // }}
+            className="z-10 flex flex-col items-center justify-center text-white"
+          >
             <motion.h1
               dir="rtl"
               className="codecPro-ExtraBold w-full flex-1 pb-[3.5vw] text-center text-[3.9vw] !leading-tight"
@@ -31,12 +39,13 @@ const HomeSection = () => {
               </button>
             </div>
             <motion.p className="w-full pb-[1vw] pt-[3.5vw] text-center text-[1vw] !leading-tight opacity-80">
-              استمتع بعالم من المحتوى العربي <br />. الترفيهي والتعليمي المتنوع
+              أستمتع بعالم من المحتوى العربي <br />
+              .الترفيهي والتعليمي المتنوع
             </motion.p>
             <strong className="codecPro-bold z-30 w-full text-center text-[1vw]">
               مجاني بالكامل
             </strong>
-          </div>
+          </motion.div>
         </div>
         <img
           alt={"faid"}

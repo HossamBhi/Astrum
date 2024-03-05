@@ -15,7 +15,7 @@ const Service1 = ({ children }: HTMLProps<HTMLDivElement>) => {
         <div className="m-auto flex w-full justify-center gap-[2vw]">
           <div className="flex flex-1 flex-col items-end text-end">
             <HeaderTitle>
-              ادخل إلى عالم رائع من <br />
+            أدخل إلى عالم رائع من <br />
               <span className="text-[#27FF55]">المنتجات الأصلية</span> الحصرية
               <br />
               !في التعليم والترفيه
@@ -23,8 +23,8 @@ const Service1 = ({ children }: HTMLProps<HTMLDivElement>) => {
             <SectionTags />
             <p className="text-[1vw]">
               أفلام وثائقية | أفلام قصيرة | عروض <br />
-              بودكاست | التعليم الأسرة والطفل
-              <br /> وغيرها الكثير
+               بودكاست | التعليم | الأسرة والطفل
+              <br /> .وغيرها الكثير | 
             </p>
           </div>
           <div className="flex w-[66%] gap-[2vw]">

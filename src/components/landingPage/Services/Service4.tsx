@@ -11,7 +11,7 @@ const Service4 = ({ children }: HTMLProps<HTMLDivElement>) => {
         <HeaderTop>
           <span className="text-[#4D17CE]"> شــاهد </span>
           فــي أي وقت
-          <p> وفي أي مكان</p>
+          <p> ومن أي مكان</p>
         </HeaderTop>
         <div className="m-auto flex w-full justify-between gap-8">
           <div className="flex w-[40%]">
