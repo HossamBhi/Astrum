@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../routes";
 
 const HomeSection = () => {
   const navigate = useNavigate();
@@ -30,8 +31,9 @@ const HomeSection = () => {
                 className="col-span-5 w-full rounded-[0.25vw] border-[.5px] border-white/50 bg-[#00000061] px-[1vw] py-[.75vw] text-[0.75vw] text-[#FFFFFF63] outline-none"
               />
               <button
-                onClick={() =>
-                  navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92")
+                onClick={
+                  () => navigate(ROUTES.switchUsers.path)
+                  // navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92")
                 }
                 className="codecPro-bold col-span-2 w-full rounded-[0.25vw] bg-[#5F2CFF] px-[2vw] py-[.75vw] text-[1.2vw] text-white"
               >

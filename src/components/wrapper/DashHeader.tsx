@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import HomeHeader from "./HomeHeader";
 import LogoWhite from "../../assets/LogoWhite";
-
-const DashHeader = () => {
+export type dashheaderProps = { isShowLogin?: boolean };
+const DashHeader = ({ isShowLogin = true }: dashheaderProps) => {
   const location = useLocation();
   const isHome = location.pathname.includes(
     "/home/ddf7aeebdb64677682cbbf0d967a4a92",
@@ -19,13 +19,13 @@ const DashHeader = () => {
       ) : (
         <>
           <motion.div
-            // initial={{ y: -20, x: -20, opacity: 0 }}
-            // animate={{
-            //   opacity: 1,
-            //   y: 0,
-            //   x: 0,
-            //   transition: { duration: 0.3, delay: 0.3 },
-            // }}
+          // initial={{ y: -20, x: -20, opacity: 0 }}
+          // animate={{
+          //   opacity: 1,
+          //   y: 0,
+          //   x: 0,
+          //   transition: { duration: 0.3, delay: 0.3 },
+          // }}
           >
             <LogoWhite />
           </motion.div>
@@ -43,7 +43,7 @@ const DashHeader = () => {
             //   x: 0,
             //   transition: { duration: 0.3, delay: 0.3 },
             // }}
-            className="codecPro-bold rounded-[0.25vw] border-[.12vw] border-white px-[1.75vw] py-[.5vw] text-[1.25vw] text-white"
+            className={`codecPro-bold rounded-[0.25vw] border-[.12vw] border-white px-[1.75vw] py-[.5vw] text-[1.25vw] text-white ${!isShowLogin && "hidden"}`}
           >
             تسجيل الدخول
           </motion.button>

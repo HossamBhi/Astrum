@@ -1,9 +1,15 @@
 import React from "react";
 
-const LogoWhite = ({ width, height }: { width?: string; height?: string }) => (
+const LogoWhite = ({
+  width = "15.77vw",
+  height,
+}: {
+  width?: string;
+  height?: string;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="15.77vw"
+    width={width}
     // height="120.025"
     viewBox="0 0 657.067 93.025"
   >

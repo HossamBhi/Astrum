@@ -1,14 +1,17 @@
 import { HTMLProps } from "react";
-import DashHeader from "./DashHeader";
+import DashHeader, { dashheaderProps } from "./DashHeader";
 
 const DashWrapper = ({
   children,
   className,
+  isShowLogin,
+  isHideHeader = false,
   ...props
-}: HTMLProps<HTMLDivElement>) => {
+}: HTMLProps<HTMLDivElement> &
+  dashheaderProps & { isHideHeader?: boolean }) => {
   return (
     <div {...props}>
-      <DashHeader />
+      {!isHideHeader && <DashHeader isShowLogin={isShowLogin} />}
       {children}
     </div>
   );
