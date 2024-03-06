@@ -1,9 +1,19 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import LogoCategory from "../../assets/LogoCategory";
 
 const HomeHeader = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const imageId = searchParams.get("image");
+  const imageSrc =
+    imageId === "1"
+      ? `${process.env.PUBLIC_URL}/imgs/users/user1.svg`
+      : imageId === "2"
+        ? `${process.env.PUBLIC_URL}/imgs/users/user2.svg`
+        : imageId === "3"
+          ? `${process.env.PUBLIC_URL}/imgs/users/user3.svg`
+          : `${process.env.PUBLIC_URL}/imgs/navicon.png`;
   return (
     <motion.header
       // initial={{ y: "-100vh" }}
@@ -15,7 +25,6 @@ const HomeHeader = () => {
         <div
           className="me-[2vw] cursor-pointer object-contain"
           onClick={() => navigate("/switch/ddf7aeebdb64677682cbbf0d967a4a92")}
-          
         >
           <LogoCategory width={"12.77vw"} />
         </div>
@@ -54,11 +63,7 @@ const HomeHeader = () => {
             <span className="cursor-pointer px-[0.75vw]">Now</span>
           </li>
         </ul>
-        <img
-          src={`${process.env.PUBLIC_URL}/imgs/navicon.png`}
-          className="w-[2vw]"
-          alt="nav icon"
-        />
+        <img src={imageSrc} className="w-[2vw]" alt="nav icon" />
       </div>
     </motion.header>
   );

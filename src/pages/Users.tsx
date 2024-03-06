@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import LogoWhite from "../assets/LogoWhite";
 import { DashWrapper } from "../components/wrapper";
-import { useNavigate } from "react-router-dom";
 import { useWindowDimensions } from "../hooks";
-import { useCallback } from "react";
 
 const Users = () => {
   const navigate = useNavigate();
@@ -11,17 +11,19 @@ const Users = () => {
   const isLandscape = width > height;
 
   const CardButton = useCallback(
-    ({ image, title }: { image: string; title: string }) => (
+    ({ id, image, title }: { id: number; image: string; title: string }) => (
       <div
-        onClick={() => navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92")}
+        onClick={() =>
+          navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92?image=" + id)
+        }
         className="flex min-h-[152px] w-[45%] cursor-pointer flex-col items-center justify-center gap-5 md:w-fit"
       >
         <img
           src={image}
           alt={title}
-          className="size-[116px] flex-1 object-contain sm:size-[9vw]"
+          className="size-[116px] flex-1 object-contain md:size-[9vw]"
         />
-        <p className="text-[18px] sm:text-[1.5vw]">{title}</p>
+        <p className="text-[18px] md:text-[1.5vw]">{title}</p>
       </div>
     ),
     [],
@@ -30,9 +32,10 @@ const Users = () => {
   return (
     <DashWrapper
       style={{
-        backgroundImage: !isLandscape
-          ? `url(/imgs/shadow-moblie1.png)`
-          : `url(/imgs/shadow.png)`,
+        backgroundImage:
+          width < 720
+            ? `url(/imgs/shadow-moblie1.png)`
+            : `url(/imgs/shadow.png)`,
         backgroundPosition: !isLandscape ? "center" : "top",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -43,7 +46,7 @@ const Users = () => {
       className="h-screen"
     >
       <motion.header
-        className={`absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent px-[7vw] py-[30px] text-white sm:px-[7vw] sm:py-[3.75vw]`}
+        className={`absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent px-[7vw] py-[30px] text-white md:px-[7vw] md:py-[3.75vw]`}
       >
         <div
           onClick={() => navigate("/switch/ddf7aeebdb64677682cbbf0d967a4a92")}
@@ -51,30 +54,34 @@ const Users = () => {
           <LogoWhite width={width > 540 ? undefined : "124px"} />
         </div>
       </motion.header>
-      <div className="flex h-screen flex-col items-center justify-start gap-[35px] px-[10%] pt-[95px] text-white sm:gap-[3vw] md:justify-center md:pt-[0] xl:pb-[70px]">
-        <h2 className="codecPro-ExtraBold text-[30px] sm:text-[3.5vw]">
+      <div className="relative flex h-screen flex-col items-center justify-start gap-[35px] px-[10%] pt-[125px] text-white md:justify-center md:gap-[3vw] md:pt-[0] xl:pb-[70px]">
+        {/* <div className="bg-fade-users-page">
+          <div className="bg-fade-inside-users-page"></div>
+        </div> */}
+        <h2 className="codecPro-ExtraBold z-[100] text-[30px] md:text-[3.5vw]">
           Who's Watching?
         </h2>
-        <div className="flex flex-wrap items-center justify-center gap-x-[10px] gap-y-[35px] sm:gap-x-[1.25vw]">
-          <CardButton title="Abdullah" image="/imgs/users/user1.svg" />
-          <CardButton title="Maria" image="/imgs/users/user2.svg" />
-          <CardButton title=" Family" image="/imgs/users/user3.svg" />
+        <div className="z-[100] flex flex-wrap items-center justify-center gap-x-[10px] gap-y-[35px] md:gap-x-[1.25vw]">
+          <CardButton id={1} title="Abdullah" image="/imgs/users/user1.svg" />
+          <CardButton id={2} title="Maria" image="/imgs/users/user2.svg" />
+          <CardButton id={3} title="Family" image="/imgs/users/user3.svg" />
+          <CardButton id={0} title="Add Profile" image="/imgs/users/plus.svg" />
 
-          <div className="flex h-[152px] w-[45%] flex-col items-center justify-center gap-5 sm:h-full sm:px-[2vw] md:h-full md:w-fit">
+          {/* <div className="flex h-[152px] w-[45%] flex-col items-center justify-center gap-5 md:h-full md:w-fit md:px-[2vw]">
             <div className="flex flex-1 items-center justify-center">
               <img
                 src={"/imgs/users/plus.svg"}
                 alt="Add Profile"
-                className="size-[57px] object-contain sm:size-[4vw]"
+                className="size-[57px] object-contain md:size-[4vw]"
               />
             </div>
-            <p className="text-[18px] sm:pb-[0.25vw] sm:text-[1vw]">
+            <p className="text-[18px] md:pb-[0.25vw] md:text-[1vw]">
               Add Profile
             </p>
-          </div>
+          </div> */}
         </div>
 
-        <button className="mt-[2%] w-[70%] border border-white py-[6px] text-[22px] sm:mt-[0.5vw] sm:px-[2vw] sm:py-[1vw] sm:text-[1.25vw] md:w-fit md:px-[40px] md:py-[14px]">
+        <button className="z-[100] mt-[2%] w-[70%] rounded-[10px] border border-white py-[6px] text-[22px] md:mt-[0.5vw] md:w-fit md:px-[2vw] md:py-[1vw] md:text-[1.25vw]">
           Manage Profiles
         </button>
       </div>

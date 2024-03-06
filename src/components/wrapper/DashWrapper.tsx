@@ -3,7 +3,6 @@ import DashHeader, { dashheaderProps } from "./DashHeader";
 
 const DashWrapper = ({
   children,
-  className,
   isShowLogin,
   isHideHeader = false,
   ...props
