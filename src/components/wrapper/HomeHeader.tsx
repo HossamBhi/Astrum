@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import LogoCategory from "../../assets/LogoCategory";
+import { ROUTES } from "../../routes";
 
 const HomeHeader = () => {
   const navigate = useNavigate();
@@ -63,7 +64,12 @@ const HomeHeader = () => {
             <span className="cursor-pointer px-[0.75vw]">Now</span>
           </li>
         </ul>
-        <img src={imageSrc} className="w-[2vw]" alt="nav icon" />
+        <img
+          src={imageSrc}
+          className="w-[2vw]"
+          alt="nav icon"
+          onClick={() => navigate(ROUTES.switchUsers.path)}
+        />
       </div>
     </motion.header>
   );

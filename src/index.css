@@ -84,6 +84,7 @@ body {
 #landingpage {
   font-family: "CodecPro-Regular";
   overflow-x: hidden;
+  font-display: block;
 }
 #Homepage {
   font-family: "CodecPro-Light";
@@ -131,4 +132,11 @@ input::placeholder {
   ); */
   background: radial-gradient(#5e2bfc 50%, #00000020 100%, #5e2bfc05 5%, #5e2bfc05 5%);
   @apply absolute -bottom-3/4 h-full w-full;
+}
+
+.item {
+  /* width: 56%; */
+  overflow: visible;
+  stroke: #fff;
+  
 }
