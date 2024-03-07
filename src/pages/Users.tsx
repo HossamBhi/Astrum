@@ -51,7 +51,7 @@ const Users = () => {
           />
         )}
         {Icon && Icon}
-     
+
         <p className="text-[18px] md:text-[1.5vw]">{title}</p>
       </motion.div>
       // </Tilt>
@@ -135,7 +135,7 @@ const Users = () => {
           // whileHover={{ scale: 1.05 }}
           className="z-[100] mt-[2%] w-[70%] rounded-[10px] border border-white py-[6px] text-[22px] md:mt-[0.5vw] md:w-fit md:px-[2vw] md:py-[1vw] md:text-[1.25vw]"
         >
-          Manage Profiles 
+          Manage Profiles
         </motion.button>
       </div>
     </DashWrapper>

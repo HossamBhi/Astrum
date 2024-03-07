@@ -7,6 +7,7 @@ const KidsImage = () => (
     width="332"
     height="332"
     viewBox="0 0 332 332"
+    className="size-[116px] flex-1 object-contain md:size-[9vw]"
   >
     <g id="Group_1607" data-name="Group 1607" transform="translate(-1987 -880)">
       <image
