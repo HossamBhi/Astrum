@@ -192,7 +192,7 @@ export default LogoWhite;
 //     width={width}
 //     // height="120.025"
 //     viewBox="0 0 657.067 93.025"
-//     className={"item"}
+//     className={"svg-item"}
 //   >
 //     &nbsp;{" "}
 //     <g

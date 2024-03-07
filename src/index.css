@@ -108,35 +108,7 @@ input::placeholder {
   height: 30px;
   opacity: 0.8;
 }
-
-.bg-fade-users-page {
-  background: rgb(94, 43, 252);
-  /* background: radial-gradient(
-    rgba(94, 43, 252, 0.7700456891741072) -100%,
-    rgba(0, 0, 0, 0) 100%
-  ); */
-  background: radial-gradient(#5e2bfc05 5%, #00000020 100%);
-  @apply absolute top-0 h-full w-full;
-  /* @apply absolute -bottom-3/4 h-full w-full; */
-
-  /* rgba(94, 43, 252,
-  0.7700456891741072) 0%, */ /* background: conic-gradient(#5e2bfc20 45deg,
-
-  #5e2bfc 90deg, #5e2bfc 210deg); */
-}
-.bg-fade-inside-users-page {
-  background: rgb(94, 43, 252);
-  /* background: radial-gradient(
-    rgba(94, 43, 252, 0.7700456891741072) -100%,
-    rgba(0, 0, 0, 0) 100%
-  ); */
-  background: radial-gradient(#5e2bfc 50%, #00000020 100%, #5e2bfc05 5%, #5e2bfc05 5%);
-  @apply absolute -bottom-3/4 h-full w-full;
-}
-
-.item {
-  /* width: 56%; */
+.svg-item {
   overflow: visible;
   stroke: #fff;
-  
 }

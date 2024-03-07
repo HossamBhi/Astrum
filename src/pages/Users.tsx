@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { useCallback } from "react";
+import { ReactNode, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import LogoWhite from "../assets/LogoWhite";
 import { DashWrapper } from "../components/wrapper";
 import { useWindowDimensions } from "../hooks";
+import KidsImage from "../assets/KidsImage";
 // import { Tilt } from "react-tilt";
 
 const Users = () => {
@@ -12,7 +13,17 @@ const Users = () => {
   const isLandscape = width > height;
 
   const CardButton = useCallback(
-    ({ id, image, title }: { id: number; image: string; title: string }) => (
+    ({
+      id,
+      image,
+      title,
+      Icon,
+    }: {
+      Icon?: ReactNode;
+      id: number;
+      image?: string;
+      title: string;
+    }) => (
       // <Tilt options={{ max: 35, scale: 1.05, axis: "x" }}>
       <motion.div
         // whileHover={{ scale: 1.1 }}
@@ -32,11 +43,15 @@ const Users = () => {
         }
         className="flex min-h-[152px] w-[45%] cursor-pointer flex-col items-center justify-center gap-5 md:w-fit"
       >
-        <img
-          src={image}
-          alt={title}
-          className="size-[116px] flex-1 object-contain md:size-[9vw]"
-        />
+        {image && (
+          <img
+            src={image}
+            alt={title}
+            className="size-[116px] flex-1 object-contain md:size-[9vw]"
+          />
+        )}
+        {Icon && Icon}
+     
         <p className="text-[18px] md:text-[1.5vw]">{title}</p>
       </motion.div>
       // </Tilt>
@@ -90,7 +105,7 @@ const Users = () => {
         <div className="z-[100] flex flex-wrap items-center justify-center gap-x-[10px] gap-y-[35px] md:gap-x-[1.25vw]">
           <CardButton id={1} title="Abdullah" image="/imgs/users/user1.svg" />
           <CardButton id={2} title="Maria" image="/imgs/users/user2.svg" />
-          <CardButton id={3} title="Family" image="/imgs/users/user3.svg" />
+          <CardButton id={3} title="Family" Icon={<KidsImage />} />
           <CardButton id={4} title="Add Profile" image="/imgs/users/plus.svg" />
 
           {/* <div className="flex h-[152px] w-[45%] flex-col items-center justify-center gap-5 md:h-full md:w-fit md:px-[2vw]">
@@ -120,7 +135,7 @@ const Users = () => {
           // whileHover={{ scale: 1.05 }}
           className="z-[100] mt-[2%] w-[70%] rounded-[10px] border border-white py-[6px] text-[22px] md:mt-[0.5vw] md:w-fit md:px-[2vw] md:py-[1vw] md:text-[1.25vw]"
         >
-          Manage Profiles
+          Manage Profiles 
         </motion.button>
       </div>
     </DashWrapper>
