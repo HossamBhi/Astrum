@@ -39,6 +39,7 @@ const Users = () => {
         //   },
         // }}
         onClick={() =>
+          id !== 4 &&
           navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92?image=" + id)
         }
         className="flex min-h-[152px] w-[45%] cursor-pointer flex-col items-center justify-center gap-5 md:w-fit"
@@ -105,7 +106,13 @@ const Users = () => {
         <div className="z-[100] flex flex-wrap items-center justify-center gap-x-[10px] gap-y-[35px] md:gap-x-[1.25vw]">
           <CardButton id={1} title="Abdullah" image="/imgs/users/user1.svg" />
           <CardButton id={2} title="Maria" image="/imgs/users/user2.svg" />
-          <CardButton id={3} title="Family" Icon={<KidsImage />} />
+          <CardButton
+            id={3}
+            title="Family"
+            Icon={
+              <KidsImage className="size-[116px] flex-1 object-contain md:size-[9vw]" />
+            }
+          />
           <CardButton id={4} title="Add Profile" image="/imgs/users/plus.svg" />
 
           {/* <div className="flex h-[152px] w-[45%] flex-col items-center justify-center gap-5 md:h-full md:w-fit md:px-[2vw]">

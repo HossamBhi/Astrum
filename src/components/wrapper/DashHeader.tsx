@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import HomeHeader from "./HomeHeader";
 import LogoWhite from "../../assets/LogoWhite";
+import { ROUTES } from "../../routes";
 export type dashheaderProps = { isShowLogin?: boolean };
 const DashHeader = ({ isShowLogin = true }: dashheaderProps) => {
   const location = useLocation();
-  const isHome = location.pathname.includes(
-    "/home/ddf7aeebdb64677682cbbf0d967a4a92",
-  );
+  const isHome =
+    location.pathname.includes("/home/ddf7aeebdb64677682cbbf0d967a4a92") ||
+    location.pathname.includes(ROUTES.switchEducation.path);
   return (
     <motion.header
       // initial={{ y: "-100vh" }}

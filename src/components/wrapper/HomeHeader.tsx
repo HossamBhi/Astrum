@@ -1,10 +1,20 @@
 import { motion } from "framer-motion";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
+import KidsImage from "../../assets/KidsImage";
 import LogoCategory from "../../assets/LogoCategory";
 import { ROUTES } from "../../routes";
+import LogoEducation from "../../assets/LogoEducation";
+const activeClassName = "border-b-2 border-b-[#4D17CE]";
 
 const HomeHeader = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
   const [searchParams] = useSearchParams();
   const imageId = searchParams.get("image");
   const imageSrc =
@@ -12,9 +22,9 @@ const HomeHeader = () => {
       ? `${process.env.PUBLIC_URL}/imgs/users/user1.svg`
       : imageId === "2"
         ? `${process.env.PUBLIC_URL}/imgs/users/user2.svg`
-        : imageId === "3"
-          ? `${process.env.PUBLIC_URL}/imgs/users/user3.svg`
-          : `${process.env.PUBLIC_URL}/imgs/navicon.png`;
+        : `${process.env.PUBLIC_URL}/imgs/navicon.png`;
+  const isEduction = pathname.includes(ROUTES.switchEducation.path);
+
   return (
     <motion.header
       // initial={{ y: "-100vh" }}
@@ -27,33 +37,54 @@ const HomeHeader = () => {
           className="me-[2vw] cursor-pointer object-contain"
           onClick={() => navigate("/switch/ddf7aeebdb64677682cbbf0d967a4a92")}
         >
-          <LogoCategory width={"12.77vw"} />
+          {isEduction ? (
+            <LogoEducation width={"12.77vw"} />
+          ) : (
+            <LogoCategory width={"12.77vw"} />
+          )}
         </div>
-        {/* <img
-          src={`${process.env.PUBLIC_URL}/imgs/Logo-Switch.svg`}
-          className="w-[12.77vw] object-contain me-[2vw] cursor-pointer"
-          onClick={() => navigate('/switch/ddf7aeebdb64677682cbbf0d967a4a92')}
-          alt="Logo category"
-        /> */}
-        <ul className="flex px-2">
-          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">المزيد</li>
-          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">بودكاست</li>
-          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">برامج</li>
-          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">
-            أفلام قصيرة
-          </li>
-          <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">وثائقيات</li>
-        </ul>
+
+        {isEduction ? (
+          <input
+            placeholder="ماذا ترغب بالتعلم اليوم؟"
+            className="w-[50%] rounded-[0.25vw] border-[.5px] border-white/50 bg-[#00000061] px-[1vw] py-[.75vw] text-right text-[0.75vw] text-[#FFFFFF63] outline-none"
+          />
+        ) : (
+          <ul className="flex px-2">
+            <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">المزيد</li>
+            <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">
+              بودكاست
+            </li>
+            <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">برامج</li>
+            <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">
+              أفلام قصيرة
+            </li>
+            <li className="cursor-pointer px-[0.75vw] text-[0.75vw]">
+              وثائقيات
+            </li>
+          </ul>
+        )}
       </div>
       <div className="flex w-full flex-1 items-center justify-end">
         <ul className="flex px-[0.75vw] text-[0.75vw]">
-          <li className="mx-[0.75vw] cursor-pointer border-b-2 border-[#4D17CE] text-[0.75vw]">
-            <span>Enterainment</span>
+          <li
+            className={`mx-[0.75vw] cursor-pointer text-[0.75vw] ${pathname.includes(ROUTES.switchHome.path) && activeClassName}`}
+          >
+            <Link to={ROUTES.switchHome.path}>
+              <span>Enterainment</span>
+            </Link>
           </li>
-          <li className="cursor-pointer text-[0.75vw]">
-            <span className="cursor-pointer border-x-2 px-[0.75vw] text-[0.75vw]">
-              Education
-            </span>
+          <li className={`relative text-[0.75vw]`}>
+            {isEduction && (
+              <div
+                className={`absolute bottom-0 left-[10%] right-0 w-[80%] ${activeClassName}`}
+              />
+            )}
+            <Link to={ROUTES.switchEducation.path}>
+              <span className={` border-x-2 px-[0.75vw] text-[0.75vw]`}>
+                Education
+              </span>
+            </Link>
           </li>
           <li className="cursor-pointer text-[0.75vw]">
             <span className="cursor-pointer border-r-2 px-[0.75vw]">
@@ -64,12 +95,16 @@ const HomeHeader = () => {
             <span className="cursor-pointer px-[0.75vw]">Now</span>
           </li>
         </ul>
-        <img
-          src={imageSrc}
-          className="w-[2vw]"
-          alt="nav icon"
+        <a
           onClick={() => navigate(ROUTES.switchUsers.path)}
-        />
+          className="cursor-pointer"
+        >
+          {imageId === "3" ? (
+            <KidsImage className="w-[2vw]" />
+          ) : (
+            <img src={imageSrc} className="w-[2vw]" alt="nav icon" />
+          )}
+        </a>
       </div>
     </motion.header>
   );

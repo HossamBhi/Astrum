@@ -1,13 +1,17 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 
-const KidsImage = () => (
+const KidsImage = ({
+  className,
+}: {
+  className: HTMLProps<HTMLDivElement>["className"];
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="332"
-    height="332"
+    // width="332"
+    // height="332"
     viewBox="0 0 332 332"
-    className="size-[116px] flex-1 object-contain md:size-[9vw]"
+    className={className}
   >
     <g id="Group_1607" data-name="Group 1607" transform="translate(-1987 -880)">
       <image
