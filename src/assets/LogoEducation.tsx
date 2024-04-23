@@ -131,9 +131,9 @@ const LogoEducation = ({
         fill="#fff"
       />
       <text
-        id="Browse_By_Countery"
+        id="Browse_By_Country"
         data-name="Browse
-By Countery"
+By Country"
         transform="translate(2415 17790)"
         fill="#fff"
         font-size="25"
@@ -144,7 +144,7 @@ By Countery"
           Browse
         </tspan>
         <tspan x="0" y="35">
-          By Countery
+          By Country
         </tspan>
       </text>
     </g>
