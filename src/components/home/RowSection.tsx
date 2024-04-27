@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { HTMLProps } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { useWindowDimensions } from "../../hooks";
-import { PROJECT_ID } from "../../utils/helper";
 import { project_places } from "../../utils/enum";
+import { PROJECT_ID } from "../../utils/helper";
 type RowSectionProps = {
   title: string | JSX.Element;
   requestUrl: string;
@@ -11,7 +11,7 @@ type RowSectionProps = {
 };
 
 const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   // const [movies, setMovies] = useState<any>([
   //   { poster_pat: require("../../assets/movies/2@2x.png") },
   // ]);
@@ -106,44 +106,44 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
           {id === 2 ? (
             <>
               <MovieCardAnimated
-                src={require("../../assets/movies2/thumbnaillTheLastExit.jpg")}
+                src={require("../../assets/movies2/thumbnaillTheLastExit.jpeg")}
               />
               <MovieCardAnimated
-                src={require("../../assets/movies2/thumbnaillThePlanetCafter.jpg")}
+                src={require("../../assets/movies2/thumbnaillThePlanetCafter.jpeg")}
               />
               <MovieCardAnimated
                 src={
                   PROJECT_ID === project_places.kuwait
-                    ? require("../../assets/movies2/thumbnailtech_kuwait.png")
-                    : require("../../assets/movies2/thumbnailtech.jpg")
+                    ? require("../../assets/movies2/thumbnailtech_kuwait.jpeg")
+                    : require("../../assets/movies2/thumbnailtech.jpeg")
                 }
               />
               <MovieCardAnimated
                 src={
                   PROJECT_ID === project_places.kuwait
-                    ? require("../../assets/movies2/zayed_kuwait.png")
-                    : require("../../assets/movies2/zayed.jpg")
+                    ? require("../../assets/movies2/zayed_kuwait.jpeg")
+                    : require("../../assets/movies2/zayed.jpeg")
                 }
               />
               <MovieCardAnimated
                 src={
                   PROJECT_ID === project_places.kuwait
-                    ? require("../../assets/movies2/ze_kuwait.png")
-                    : require("../../assets/movies2/ze.jpg")
+                    ? require("../../assets/movies2/ze_kuwait.jpeg")
+                    : require("../../assets/movies2/ze.jpeg")
                 }
               />
               <MovieCardAnimated
                 src={
                   PROJECT_ID === project_places.kuwait
-                    ? require("../../assets/movies2/free_kuwait.png")
-                    : require("../../assets/movies2/free.jpg")
+                    ? require("../../assets/movies2/free_kuwait.jpeg")
+                    : require("../../assets/movies2/free.jpeg")
                 }
               />
               <MovieCardAnimated
-                src={require("../../assets/movies2/hadara.jpg")}
+                src={require("../../assets/movies2/hadara.jpeg")}
               />
               <MovieCardAnimated
-                src={require("../../assets/movies2/thumbnail-l-Mission-8.jpg")}
+                src={require("../../assets/movies2/thumbnail-l-Mission-8.jpeg")}
               />
             </>
           ) : id === 3 ? (

@@ -54,12 +54,8 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des,
-          banner: `${process.env.PUBLIC_URL}/imgs${
-            PROJECT_ID === project_places.kuwait ? "/kuwait" : ""
-          }/banners/Slider-1.png`,
-          logo: `${process.env.PUBLIC_URL}/imgs${
-            PROJECT_ID === project_places.kuwait ? "/kuwait" : ""
-          }/banners/banner1-logo.png`,
+          banner: `${process.env.PUBLIC_URL}/imgs/banners/Slider-2.png`,
+          logo: `${process.env.PUBLIC_URL}/imgs/banners/banner2-logo.png`,
           flag: "top 10",
           serious: 1,
           epsiod: 1,
@@ -82,8 +78,14 @@ export function HomeCarausel() {
         {
           title: "image 3",
           des,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-2.png",
-          logo: process.env.PUBLIC_URL + "/imgs/banners/banner2-logo.png",
+          banner: `${process.env.PUBLIC_URL}/imgs${
+            PROJECT_ID === project_places.kuwait ? "/kuwait/banners/Slider-2.jpeg" : "/banners/Slider-2.png"
+          }`,
+          logo: `${process.env.PUBLIC_URL}/imgs${
+            PROJECT_ID === project_places.kuwait ? "/kuwait" : ""
+          }/banners/banner1-logo.png`,
+          // banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-2.png",
+          // logo: process.env.PUBLIC_URL + "/imgs/banners/banner2-logo.png",
           flag: "",
           isComming: true,
           serious: 1,
