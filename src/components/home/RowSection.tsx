@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { HTMLProps } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { useWindowDimensions } from "../../hooks";
+import { PROJECT_ID } from "../../utils/helper";
+import { project_places } from "../../utils/enum";
 type RowSectionProps = {
   title: string | JSX.Element;
   requestUrl: string;
@@ -110,14 +112,32 @@ const RowSection = ({ title, requestUrl, id }: RowSectionProps) => {
                 src={require("../../assets/movies2/thumbnaillThePlanetCafter.jpg")}
               />
               <MovieCardAnimated
-                src={require("../../assets/movies2/thumbnailtech.jpg")}
+                src={
+                  PROJECT_ID === project_places.kuwait
+                    ? require("../../assets/movies2/thumbnailtech_kuwait.png")
+                    : require("../../assets/movies2/thumbnailtech.jpg")
+                }
               />
               <MovieCardAnimated
-                src={require("../../assets/movies2/zayed.jpg")}
+                src={
+                  PROJECT_ID === project_places.kuwait
+                    ? require("../../assets/movies2/zayed_kuwait.png")
+                    : require("../../assets/movies2/zayed.jpg")
+                }
               />
-              <MovieCardAnimated src={require("../../assets/movies2/ze.jpg")} />
               <MovieCardAnimated
-                src={require("../../assets/movies2/free.jpg")}
+                src={
+                  PROJECT_ID === project_places.kuwait
+                    ? require("../../assets/movies2/ze_kuwait.png")
+                    : require("../../assets/movies2/ze.jpg")
+                }
+              />
+              <MovieCardAnimated
+                src={
+                  PROJECT_ID === project_places.kuwait
+                    ? require("../../assets/movies2/free_kuwait.png")
+                    : require("../../assets/movies2/free.jpg")
+                }
               />
               <MovieCardAnimated
                 src={require("../../assets/movies2/hadara.jpg")}

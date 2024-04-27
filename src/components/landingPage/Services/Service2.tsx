@@ -3,6 +3,8 @@ import Container from "./Container";
 import HeaderTitle from "./HeaderTitle";
 import HeaderTop from "./HeaderTop";
 import SectionTags from "./SectionTags";
+import { project_places } from "../../../utils/enum";
+import { PROJECT_ID } from "../../../utils/helper";
 
 const Service2 = ({ children }: HTMLProps<HTMLDivElement>) => {
   return (
@@ -15,7 +17,16 @@ const Service2 = ({ children }: HTMLProps<HTMLDivElement>) => {
           <div className="flex w-[100%]">
             <img
               // src={require("../../../assets/service2.png")}
-              src={`${process.env.PUBLIC_URL}/imgs/home/service2.png`}
+
+              src={
+                `${process.env.PUBLIC_URL}${
+                  PROJECT_ID === project_places.kuwait
+                    ? "/imgs/kuwait/home/service2.png"
+                    : "/imgs/home/service2.png"
+                }`
+
+                // `${process.env.PUBLIC_URL}/imgs/home/service2.png`
+              }
               alt="أفراد الأسرة"
               className="h-full w-[100%] object-contain"
             />

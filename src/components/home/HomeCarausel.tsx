@@ -4,6 +4,13 @@ import HeroSection from "./HeroSection";
 import { useWindowDimensions } from "../../hooks";
 import VR from "../../assets/VR";
 import FourK from "../../assets/FourK";
+import { PROJECT_ID } from "../../utils/helper";
+import { project_places } from "../../utils/enum";
+
+const des =
+  PROJECT_ID === project_places.kuwait
+    ? "برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الكويت\n  يتخذ البرنامج من الامير مشعل الصباح\nرمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الكويت"
+    : `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`;
 
 export function HomeCarausel() {
   const { height } = useWindowDimensions();
@@ -46,15 +53,22 @@ export function HomeCarausel() {
       {[
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
-          banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-1.png",
-          logo: process.env.PUBLIC_URL + "/imgs/banners/banner1-logo.png",
+          des,
+          banner: `${process.env.PUBLIC_URL}/imgs${
+            PROJECT_ID === project_places.kuwait ? "/kuwait" : ""
+          }/banners/Slider-1.png`,
+          logo: `${process.env.PUBLIC_URL}/imgs${
+            PROJECT_ID === project_places.kuwait ? "/kuwait" : ""
+          }/banners/banner1-logo.png`,
           flag: "top 10",
           serious: 1,
           epsiod: 1,
           video: true,
-          tags: <VR width={'7vw'}/>,
-          location: "في الإمارات العربية المتحدة",
+          tags: <VR width={"7vw"} />,
+          location:
+            PROJECT_ID === project_places.kuwait
+              ? "في دولة الكويت"
+              : "في الإمارات العربية المتحدة",
           copyRights: (
             <>
               A{" "}
@@ -67,14 +81,14 @@ export function HomeCarausel() {
         },
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-2.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner2-logo.png",
           flag: "",
           isComming: true,
           serious: 1,
           epsiod: 1,
-          tags: <FourK width={"7vw"}/>,
+          tags: <FourK width={"7vw"} />,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -82,33 +96,36 @@ export function HomeCarausel() {
               <strong className="codecPro-ExtraBold text-[#4D17CE]">
                 Switch
               </strong>{" "}
-              ORIGINAL DECUMENTARY
+              ORIGINAL DOCUMENTARY
             </>
           ),
         },
         {
           title: "image 9",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-9.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner9-logo.png",
           flag: "top 10",
           serious: 3,
           epsiod: 1,
-          tags: <FourK width={"7vw"}/>,
-          location: "في المملكة العربية السعودية",
+          tags: <FourK width={"7vw"} />,
+          location:
+            PROJECT_ID === project_places.kuwait
+              ? "في دولة الكويت"
+              : "في المملكة العربية السعودية",
           copyRights: <></>,
           x: "فيلم وثائقي",
         },
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-8.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner8-logo.png",
           flag: "",
           isComming: true,
           serious: 3,
           epsiod: 1,
-          tags: <VR  width={'7vw'}/> ,
+          tags: <VR width={"7vw"} />,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -122,34 +139,37 @@ export function HomeCarausel() {
         },
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-7.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner7-logo.png",
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: <FourK width={"7vw"}/>,
-          location: "في المملكة العربية السعودية",
+          tags: <FourK width={"7vw"} />,
+          location:
+            PROJECT_ID === project_places.kuwait
+              ? "في دولة الكويت"
+              : "في المملكة العربية السعودية",
           copyRights: (
             <>
               A{" "}
               <strong className="codecPro-ExtraBold text-[#4D17CE]">
                 Switch
               </strong>{" "}
-              ORIGINAL DECUMENTARY
+              ORIGINAL DOCUMENTARY
             </>
           ),
         },
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-4.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner4-logo.png",
           flag: "",
           isComming: true,
           serious: 1,
           epsiod: 1,
-          tags: <FourK width={"7vw"}/>,
+          tags: <FourK width={"7vw"} />,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -163,26 +183,29 @@ export function HomeCarausel() {
         },
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-6.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner6-logo.png",
           flag: "top 10",
           serious: 1,
           epsiod: 1,
-          tags: <FourK width={"7vw"}/>,
-          location: "في المملكة العربية السعودية",
+          tags: <FourK width={"7vw"} />,
+          location:
+            PROJECT_ID === project_places.kuwait
+              ? "في دولة الكويت"
+              : "في المملكة العربية السعودية",
           copyRights: <></>,
         },
         {
           title: "image 3",
-          des: `برنامج وثائقي يقدم حلقات دورية تعكس التطورات والأخبار في دولة الإمارات\n لعربية المتحدة. يتخذ البرنامج من الشيخ زايد بن سلطان آل نهيان، المؤسس \n.الراحل للدولة، رمزًا للرؤية والإرث الذي يستمر في تشكيل مستقبل الإمارات`,
+          des,
           banner: process.env.PUBLIC_URL + "/imgs/banners/Slider-3.png",
           logo: process.env.PUBLIC_URL + "/imgs/banners/banner3-logo.png",
           flag: "",
           isComming: true,
           serious: 3,
           epsiod: 1,
-          tags: <FourK width={"7vw"}/>,
+          tags: <FourK width={"7vw"} />,
           location: "DECEMBER 2",
           copyRights: (
             <>
@@ -190,7 +213,7 @@ export function HomeCarausel() {
               <strong className="codecPro-ExtraBold text-[#4D17CE]">
                 Switch
               </strong>{" "}
-              ORIGINAL DECUMENTARY
+              ORIGINAL DOCUMENTARY
             </>
           ),
         },
