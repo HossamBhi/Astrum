@@ -40,7 +40,7 @@ const Users = () => {
         // }}
         onClick={() =>
           id !== 4 &&
-          navigate("/home/ddf7aeebdb64677682cbbf0d967a4a92?image=" + id)
+          navigate("/home/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4?image=" + id)
         }
         className="flex min-h-[152px] w-[45%] cursor-pointer flex-col items-center justify-center gap-5 md:w-fit"
       >
@@ -80,7 +80,7 @@ const Users = () => {
         className={`absolute top-0 z-[100] flex w-full items-center justify-between bg-transparent px-[7vw] py-[30px] text-white md:px-[7vw] md:py-[3.75vw]`}
       >
         <div
-          onClick={() => navigate("/switch/ddf7aeebdb64677682cbbf0d967a4a92")}
+          onClick={() => navigate("/switch/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4")}
         >
           <LogoWhite width={width > 540 ? undefined : "124px"} />
         </div>

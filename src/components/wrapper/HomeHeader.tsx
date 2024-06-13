@@ -35,7 +35,7 @@ const HomeHeader = () => {
       <div className="flex w-full flex-1 items-center">
         <div
           className="me-[2vw] cursor-pointer object-contain"
-          onClick={() => navigate("/switch/ddf7aeebdb64677682cbbf0d967a4a92")}
+          onClick={() => navigate("/switch/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4")}
         >
           {isEduction ? (
             <LogoEducation width={"12.77vw"} />

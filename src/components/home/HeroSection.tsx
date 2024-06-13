@@ -87,7 +87,7 @@ const HeroSection = ({
 
               <button
                 onClick={() =>
-                  item.video && navigate("/video/ddf7aeebdb64677682cbbf0d967a4a92")
+                  item.video && navigate("/video/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4")
                 }
                 className="codecPro-bold rounded-[0.25vw] bg-[#4D17CE] px-[3vw] py-[.75vw] text-[1vw] text-white"
               >

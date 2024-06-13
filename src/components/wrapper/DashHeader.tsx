@@ -7,7 +7,7 @@ export type dashheaderProps = { isShowLogin?: boolean };
 const DashHeader = ({ isShowLogin = true }: dashheaderProps) => {
   const location = useLocation();
   const isHome =
-    location.pathname.includes("/home/ddf7aeebdb64677682cbbf0d967a4a92") ||
+    location.pathname.includes("/home/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4") ||
     location.pathname.includes(ROUTES.switchEducation.path);
   return (
     <motion.header

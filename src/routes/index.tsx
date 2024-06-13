@@ -5,20 +5,20 @@ import VideoPage from "../pages/VideoPage";
 export const ROUTES = {
   astrumHome: { path: "/", Page: Home },
   switchLandingpage: {
-    path: "/switch/ddf7aeebdb64677682cbbf0d967a4a92",
+    path: "/switch/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4",
     Page: LandingPage,
   },
-  switchUsers: { path: "/Users/ddf7aeebdb64677682cbbf0d967a4a92", Page: Users },
+  switchUsers: { path: "/Users/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4", Page: Users },
   switchEducation: {
-    path: "/education/ddf7aeebdb64677682cbbf0d967a4a92",
+    path: "/education/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4",
     Page: Education,
   },
   switchHome: {
-    path: "/home/ddf7aeebdb64677682cbbf0d967a4a92",
+    path: "/home/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4",
     Page: Homepage,
   },
   swtichVideo: {
-    path: "/video/ddf7aeebdb64677682cbbf0d967a4a92",
+    path: "/video/a3b9c8d1e2f4a5b6c7d8e9f0a1b2c3d4",
     Page: VideoPage,
   },
 };
