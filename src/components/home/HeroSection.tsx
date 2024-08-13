@@ -93,6 +93,7 @@ const HeroSection = ({
               >
                 شاهد الآن
               </button>
+              
             </motion.div>
             <div className="flex w-full items-center justify-between">
               <p className="text-[1vw]">{item.copyRights}</p>
